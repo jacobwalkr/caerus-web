@@ -1,4 +1,4 @@
-wbesu-events
-============
+caerus-web
+==========
 
-A rewrite of my dead-in-the-water events system for the West Bridgford ESU
+The user-facing web application for Project Caerus

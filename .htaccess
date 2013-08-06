@@ -1,5 +1,0 @@
-RewriteEngine On
-RewriteBase /
-
-RewriteCond %{REQUEST_URI} !^/?static/.*
-RewriteRule ^(.*)$ index.php?request=$1 [QSA,L]
