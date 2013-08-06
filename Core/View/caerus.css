@@ -46,14 +46,14 @@ html, body {
 #circleRadius {
 	left: 410px;
 	height: 18px;
-	width:35px;
+	width: 35px;
 }
 
 #placePinButton {
 	left: 456px;
 	height: 20px;
 	width: 56px;
-	top: 70px;
+	top: 55px;
 	position: absolute;
 	z-index: 2;
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
@@ -66,7 +66,7 @@ html, body {
 	width: 70 px;
 	height: 16px;
 	position: absolute;
-	top: 69px;
+	top: 54px;
 	left: 455px;
 	border-style: solid;
 	border-width: 1px;
@@ -81,7 +81,7 @@ html, body {
 }
 
 #filter, #address, #circleRadius {
-	top: 70px;
+	top: 55px;
 	position: absolute;
 	z-index: 2;
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
