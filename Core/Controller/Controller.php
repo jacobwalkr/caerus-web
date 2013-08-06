@@ -10,6 +10,13 @@ class Controller
     public function Go($action)
     {
         // No error checking yet
-        if ($this->$action();
+        if (strlen($action) > 0)
+        {
+            $this->$action();
+        }
+        else
+        {
+            $this->index();
+        }
     }
 }
