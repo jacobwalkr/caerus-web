@@ -1,28 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
- <link rel="stylesheet" type="text/css" href="caerus.css">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(54,-2),
-          zoom: 6,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  <body>
-    <header id="top-bar">
-      <h1>Project Caerus</h1>
-    </header>
-      <div id="map-canvas"></div>
-  </body>
+	<head>
+		<link rel="stylesheet" type="text/css" href="caerus.css">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
+		</script>
+		<script type="text/javascript">
+			var geocoder;
+			var map;
+			function initialize() {
+				var mapOptions = {
+					center: new google.maps.LatLng(54,-2),
+					zoom: 6,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+			}
+			function addPin() {
+				var pin = new google.maps.Marker({
+					map: map,
+					position: new google.maps.LatLng(54,-2),
+					draggable: true,
+				});
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+			//Add pin to map
+			function codeAddress() {
+				var address = document.getElementById('address').value;
+				var geocoder = new google.maps.Geocoder();
+				geocoder.geocode( { 'address': address}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						map.setCenter(results[0].geometry.location);
+						var marker = new google.maps.Marker({
+							map: map,
+							position: results[0].geometry.location,
+							draggable: true,
+//							visible: false,
+//							icon: new google.maps.Icon(
+//								size: new google.maps.Size(440, 750, "px", "px"),
+//								scaledSize: new google.maps.Size(10, 10, "%", "?"),
+//								url: "rePin.svg"
+//							);
+						});
+						var circle = new google.maps.Circle({
+							map: map,
+							fillColor:"red",
+							fillOpacity:0.5,
+							strokeColor:"red",
+							center: results[0].geometry.location,
+							radius: parseInt(document.getElementById("circleRadius").value)
+						});
+					}
+					else {
+					alert('Geocode was not successful for the following reason: ' + status);
+					}
+				});
+			}
+			</script>
+		</script>
+	</head>
+	<body>
+		<header id="top-bar">
+			<h1>Project Caerus</h1>
+		</header>
+		<select id="filter">
+			<option value=null>Filter pins</option>
+			<option value="clothing">Clothing</option>
+			<option value="computers">Computers</option>
+			<option value="keys">Keys</option>
+			<option value="mobilePhones">Mobile Phones</option>
+			<option value="walletsAndPurses">Wallets and Purses</option>
+		</select>
+		<input type="text" id="address" placeholder="Address or postcode"/>
+		<input type="number" id="circleRadius" value="0"/>
+		<canvas id="buttonBorder"></canvas>
+		<input type="button" id="placePinButton" onclick="codeAddress()" value="Add pin"/>
+		<div id="map-canvas"></div>
+	</body>
 </html>
