@@ -34,7 +34,7 @@ class Handler
          * No error checking yet!
          */
         $controllerName =  ucfirst(strtolower($matches['controller'])) . "Controller";
-        require "Controllers/" . $controllerName . ".php";
+        require "Application/Controller/" . $controllerName . ".php";
 
         $controller = new $controllerName($nice_data, $nice_query);
         $controller->Go($matches['action']);
