@@ -11,14 +11,14 @@ body {
 }
 #logo {
 	width:30%;
-	height:auto;
+	height:100px;
 }
 #navbar {
 	width:auto;
 	height:auto;
 }
-#toolbar {
-	width:30%;
+#toolBar {
+	width:20%;
 	height:auto;
 	position:absolute;
 	top:113px;
