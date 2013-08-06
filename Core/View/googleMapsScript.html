@@ -34,7 +34,21 @@
 						map.setCenter(results[0].geometry.location);
 						var marker = new google.maps.Marker({
 							map: map,
-							position: results[0].geometry.location
+							position: results[0].geometry.location,
+//							visible: false,
+//							icon: new google.maps.Icon(
+//								size: new google.maps.Size(440, 750, "px", "px"),
+//								scaledSize: new google.maps.Size(10, 10, "%", "?"),
+//								url: "rePin.svg"
+//							);
+						});
+						var circle = new google.maps.Circle({
+							map: map,
+							fillColor:"red",
+							fillOpacity:0.5,
+							strokeColor:"red",
+							center: results[0].geometry.location,
+							radius: parseInt(document.getElementById("circleRadius").value)
 						});
 					}
 					else {
@@ -50,7 +64,8 @@
 		<div id="map-canvas"></div>
 		<div id="toolBar">
 			<button onclick="addPin()" style="float:right;">Add pin</button>
-			<input type='text' id='address' value="Enter address"/>
+			<input type="text" id="address" value="Enter address"/>
+			<input type="number" value="10" id="circleRadius"/>
 			<button onclick="codeAddress()">Add pin to address</button>
 		</div>
 	</body>
