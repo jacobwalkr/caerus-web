@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="caerus.css">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script src="modernizr.custom.63321.js"></script>
 		<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
 		</script>
@@ -62,20 +63,32 @@
 	</head>
 	<body>
 		<header id="top-bar">
-			<h1>Project Caerus</h1>
+			<h1>Reunitem</h1>
+			<img src="http://www.gravatar.com/avatar/2baadddd99c9ed9c686f4e1a3f0dc1ce.png" class="profile-pic"/>
+			<h3>Welcome, James</h3>
 		</header>
-		<select id="filter">
-			<option value=null>Filter pins</option>
-			<option value="clothing">Clothing</option>
-			<option value="computers">Computers</option>
-			<option value="keys">Keys</option>
-			<option value="mobilePhones">Mobile Phones</option>
-			<option value="walletsAndPurses">Wallets and Purses</option>
+		<select id="cd-dropdown" class="cd-select">
+				<option value="-1" selected>Filter</option>
+				<option value="1">Clothing</option>
+				<option value="2">Computers</option>
+				<option value="3">Keys</option>
+				<option value="4">Mobile Devices</option>
+				<option value="5">Wallets and Purses</option>
+				<option value="6">Other</option>
 		</select>
-		<input type="text" id="address" placeholder="Address or postcode"/>
-		<input type="number" id="circleRadius" value="0"/>
-		<canvas id="buttonBorder"></canvas>
-		<input type="button" id="placePinButton" onclick="codeAddress()" value="Add pin"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.dropdown.js"></script>
+		<script type="text/javascript">
+			
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown( {
+					gutter : 5
+				} );
+
+			});
+
+		</script>
 		<div id="map-canvas"></div>
 	</body>
 </html>

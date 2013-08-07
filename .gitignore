@@ -7,7 +7,7 @@ nbproject/
 # Files containing secret keys like passwords and shit
 secret/
 
-# Logs and shit
+# Logs
 apache-logs
 
 # Well, this turned out to be pretty boring...
