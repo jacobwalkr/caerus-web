@@ -50,12 +50,14 @@ html, body {
 }
 
 #placeRedPinButton {
-	left:300px;
+	left:250px;
+	width:125px;
 	background: #e74c3c;
 }
 
 #placeBluePinButton {
-	left:416px;
+	left:375px;
+	width:125px;
 	background: #2980b9;
 }
 
