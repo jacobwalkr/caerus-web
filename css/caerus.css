@@ -60,14 +60,11 @@ html, body {
 #logoButton {
 	width:200px;
 	background-color: #8e44ad;
-	position: absolute;
-	z-index: 0;
-	display: inline-block;
+	background-image: url('../img/logowhite.png');
 }
 
 .logoimage {
 	height: 48px;
-	z-index: 1;
 }
 
 #placeRedPinButton {
