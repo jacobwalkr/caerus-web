@@ -12,6 +12,8 @@
 	<body>
 		<header id="top-bar">
 			<h1>Project Caerus</h1>
+			<input type="button" class="pinButton" id="placeRedPinButton" onclick="codeAddress('#e74c3c')" value="I've lost it!"/>
+			<input type="button" class="pinButton" id="placeBluePinButton" onclick="codeAddress('#2980b9')" value="I've found it!"/>
 		</header>
 		<select id="filter">
 			<option value=null>Filter pins</option>
@@ -24,7 +26,6 @@
 		<input type="text" id="address" placeholder="Address or postcode"/>
 		<input type="number" id="circleRadius" value="0" min="0" step="10"/>
 		<canvas id="buttonBorder"></canvas>
-		<input type="button" id="placePinButton" onclick="codeAddress()" value="Add pin"/>
 		<div id="map-canvas"></div>
 	</body>
 </html>

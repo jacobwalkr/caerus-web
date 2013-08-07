@@ -17,9 +17,9 @@ function addPin() {
 	});
 }
 google.maps.event.addDomListener(window, "load", initialize);
+var pinColour = "#e74c3c"
 //Add pin to map
-function codeAddress() {
-	var pinColour = "#e74c3c"
+function codeAddress(pinColour) {
 	var customIcon
 	switch (document.getElementById("filter").value) {
 		case "clothing":
