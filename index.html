@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/caerus.css">
         <title>Welcome to Reunitem</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-        <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
-        </script>
-        <script src="js/modernizr.custom.63321.js"></script>
-        <script src="js/googleMapsScript.js"></script>
     </head>
     <body>
         <header id="top-bar">
@@ -30,10 +25,9 @@
         <input type="number" id="circleRadius" value="0" min="0" step="10"/>
         <canvas id="buttonBorder"></canvas>
         <div id="map-canvas"></div>
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <!--Scripts start here-->
         <script type="text/javascript" src="js/jquery.dropdown.js"></script>
         <script type="text/javascript">
-            
             $( function() {
                 
                 $( '#cd-dropdown' ).dropdown( {
@@ -41,7 +35,11 @@
                 } );
 
             });
-
         </script>
+        <script src="js/modernizr.custom.63321.js"></script>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
+        </script>
+        <script src="js/googleMapsScript.js"></script>
     </body>
 </html>
