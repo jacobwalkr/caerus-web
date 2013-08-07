@@ -114,8 +114,6 @@ html, body {
 	top: 0px;
 	width: 100%;
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
 	display: block;
 }
 
@@ -150,7 +148,7 @@ html, body {
 .cd-select {
 	position: relative;
 	width: 300px;
-	margin: 20px auto;
+	margin: 0 auto;
 	display: block;
 }
 
@@ -194,7 +192,7 @@ html, body {
 	width: 100%;
 	background: #fff;
 	line-height: 60px;
-	padding: 0 30px 0 75px;
+	padding: 0 0 0 30px;
 	display: block;
 	color: #bcbcbc;
 	cursor: pointer;
@@ -228,4 +226,4 @@ body {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-}
+} 
