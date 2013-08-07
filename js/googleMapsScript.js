@@ -31,6 +31,14 @@ function codeAddress(pinColour) {
                 customIcon = "img/blueComputerPin.svg";
             }
         break;
+        case "Keys":
+            if (pinColour === "#e74c3c") {
+                customIcon = "img/redKeyPin.svg";
+            }
+            else if (pinColour === "#2980b9") {
+                customIcon = "img/blueKeyPin.svg";
+            }
+        break;
         case "Mobile Devices":
             if (pinColour === "#e74c3c") {
                 customIcon = "img/redPhonePin.svg";
@@ -38,6 +46,17 @@ function codeAddress(pinColour) {
             else if (pinColour === "#2980b9") {
                 customIcon = "img/bluePhonePin.svg";
             }
+        break;
+        case "Wallets and Purses":
+            if (pinColour === "#e74c3c") {
+                customIcon = "img/redPoundPin.svg";
+            }
+            else if (pinColour === "#2980b9") {
+                customIcon = "img/bluePoundPin.svg";
+            }
+        break;
+        case "Filter":
+            alert("Please choose a category!");
         break;
         default:
             if (pinColour === "#e74c3c") {
