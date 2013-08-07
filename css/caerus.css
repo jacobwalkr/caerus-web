@@ -127,7 +127,7 @@ html, body {
 }
 
 .cd-active.cd-dropdown > span,
-.cd-active.cd-dropdown ul li span {
+.cd-active ul li span {
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
@@ -146,10 +146,12 @@ html, body {
 
 .cd-dropdown,
 .cd-select {
-	position: relative;
+	position: absolute;
 	width: 300px;
-	margin: 0 auto;
+	margin-left: 100px;
+	margin-top: 69px;
 	display: block;
+
 }
 
 .cd-dropdown > span {
