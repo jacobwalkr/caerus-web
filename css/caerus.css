@@ -247,11 +247,8 @@ body {
 }
 
 #markerLightbox {
-    position: absolute;
-    top: 250px;
-    left: 400px;
     width: 500px;
-    height: 200px;
+    height: auto;
 }
 
 .lightboxGreyout {
@@ -290,7 +287,7 @@ body {
 }
 
 #circleRadiusInput {
-    width: 161px;
+    width: 164px;
     height: 23px;
 }
 
@@ -313,7 +310,7 @@ body {
 #submitLostMarker {
     line-height: 18px;
     padding-right: 46px;
-    padding-left: 47px;
+    padding-left: 45px;
     height: 23px;
     float: right;
     border-radius: 5px;
@@ -328,7 +325,7 @@ body {
 #submitFoundMarker {
     line-height: 18px;
     padding-right: 46px;
-    padding-left: 47px;
+    padding-left: 45px;
     height: 23px;
     float: right;
     border-radius: 5px;

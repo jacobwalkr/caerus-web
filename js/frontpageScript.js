@@ -42,7 +42,6 @@ function addMarkerLightboxContent(pinHex) {
         $(foundLightboxHTML).appendTo("#markerLightbox");
     }
 }
-//Had to define this as one function to work with the html
 function lightboxAndContent(lightboxID,pinColour) {
     drawLightbox(lightboxID);
     addMarkerLightboxContent(pinColour);
