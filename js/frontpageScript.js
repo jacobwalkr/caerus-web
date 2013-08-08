@@ -114,22 +114,6 @@ function codeAddress(pinColour) {
         url:customIcon,
         scaledSize: new google.maps.Size(20,34.09,"px","px")
     };
-    window.marker = new google.maps.Marker({
-        map: map,
-        position: map.getCenter(),
-        draggable: true,
-        icon: pin
-    });
-    google.maps.event.addListener(marker,"click",function() {drawLightbox("markerLightbox")});
-    circle = new google.maps.Circle({
-        map: map,
-        fillColor:pinColour,
-        fillOpacity:0.5,
-        strokeColor:pinColour,
-        center: window.marker.getPosition(),
-        radius: parseInt(document.getElementById("circleRadiusInput").value)
-    });
-    circle.bindTo("center",marker,"position");
     var address = document.getElementById("address").value;
     var geocoder = new google.maps.Geocoder();
     var pin = {
