@@ -1,6 +1,7 @@
 var geocoder, map, circle;
 var lostLightboxHTML = '<h1 class="lostHeader">Edit pin information</h1><hr class="lostRule"><form><table><tr><td><label class="lostLabel">What have you lost?</label></td><td><input type="text" id= "title" class="markerLostForm" placeholder="Item"></td></tr><tr><td><label class="lostLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerLostForm"></td></tr><tr><td><label class="lostLabel">Not sure where you lost it? Set an area in meters:</label></td><td><input type="text" class="markerLostForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitLostMarker" onclick="codeAddress(\'#e74c3c\')" value="Add marker"></td></tr></table></form>';
 var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><hr class="foundRule"><form><table><tr><td><label class="foundLabel">What have you found?</label></td><td><input type="text" id= "title" class="markerFoundForm" placeholder="Item"></td></tr><tr><td><label class="foundLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerFoundForm"></td></tr><tr><td><label class="foundLabel">Not sure where you found it? Set an area in meters:</label></td><td><input type="text" class="markerFoundForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitFoundMarker" onclick="codeAddress(\'#2980b9\')" value="Add marker"></td></tr></table></form>';
+var loginLightboxHTML = '<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>';
 function initialize() {
     var mapOptions = {
         center: new google.maps.LatLng(54, -2),
@@ -177,3 +178,8 @@ function codeAddress(pinColour) {
     });
     removeLightbox("markerLightbox");
 }
+//Lightbox opens when login button is clicked
+$("#loginButton").click(function() {
+    drawLightbox("loginLightbox");
+    $(loginLightboxHTML).appendTo("#loginLightbox");
+});

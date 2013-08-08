@@ -22,7 +22,6 @@ html, body {
 
 #top-bar {
 	background-color: #8e44ad;
-	position: absolute;
 	width: 100%;
 	height: 50px;
 	z-index: 1009;
@@ -47,10 +46,10 @@ html, body {
 }
 
 #map-canvas {
-	position: absolute;
-	top: 50px;
+    position:absolute;
+    top: 50px;
 	width: 100%;
-	height: 100%;
+    height: 100%;
 	background-color: #000000;
 	z-index: 0;
     -webkit-transform: translateZ(0);
