@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="redPoundPin.svg">
+   sodipodi:docname="bluePoundPin.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="-149.14973"
+     inkscape:cx="244.75137"
      inkscape:cy="388.40151"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -58,7 +58,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -81,17 +81,13 @@
        d="M 135,352.36218 340,802.26065 545,352.36218 z"
        id="path3761"
        inkscape:connector-curvature="0" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2985"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="matrix(3.224603,0,0,3.224603,-140.51374,-185.63268)"><flowRegion
-         id="flowRegion2987"><rect
-           id="rect2989"
-           width="254.55844"
-           height="319.20819"
-           x="107.07617"
-           y="65.116577" /></flowRegion><flowPara
-         id="flowPara2991"
-         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">£</flowPara></flowRoot>  </g>
+    <g
+       style="font-size:128.9841156px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="text3757">
+      <path
+         d="m 431.22349,347.74413 24.48683,53.96172 c -8.61598,4.68575 -18.5543,8.50237 -29.81498,11.44986 -11.26113,2.94748 -22.18194,4.42122 -32.76247,4.42123 -13.60397,-10e-6 -31.74234,-3.21201 -54.41518,-9.63602 -22.6731,-6.424 -39.45109,-9.63601 -50.33404,-9.63602 -18.44076,1e-5 -37.25932,6.57517 -56.45574,19.7255 l -24.2601,-54.86864 c 17.0803,-12.24335 29.36149,-25.28031 36.84361,-39.1109 7.48204,-13.83043 11.22308,-27.01853 11.22313,-39.56437 -5e-5,-4.08101 -0.30236,-8.38887 -0.90692,-12.92361 l -47.15982,0 0,-50.1073 35.59659,0 c -6.19731,-17.83588 -9.29595,-35.89868 -9.29592,-54.18845 -3e-5,-16.47544 4.49677,-32.19537 13.49043,-47.15982 8.99357,-14.96386 21.72822,-26.338137 38.20399,-34.122848 16.4756,-7.784059 34.46283,-11.676252 53.96171,-11.67659 29.77703,3.38e-4 53.50807,7.520205 71.19319,22.559625 17.68471,15.040053 28.49216,36.617153 32.42238,64.731383 l -61.44381,9.0692 c -2.87208,-16.17314 -8.08687,-27.81193 -15.64436,-34.91641 -7.55782,-7.10392 -17.00489,-10.65601 -28.34124,-10.6563 -12.09238,2.9e-4 -22.14406,4.04363 -30.15507,12.13005 -8.01122,8.08697 -12.01678,18.25201 -12.01669,30.49517 -9e-5,6.34868 1.09577,14.73767 3.28758,25.16702 2.19163,10.42978 4.8746,19.95243 8.04892,28.56797 l 70.73973,0 0,50.1073 -60.31016,0 c 0.45335,3.32551 0.68008,6.65088 0.68019,9.97612 -1.1e-4,11.94123 -2.26741,22.9754 -6.8019,33.10257 -4.5347,10.12735 -13.83061,23.42883 -27.88777,39.90446 8.31334,-4.23223 18.7429,-6.34838 31.28872,-6.34844 5.29025,6e-5 10.05158,0.30237 14.28399,0.90692 2.11602,0.30237 8.31329,1.73832 18.59185,4.30787 18.28938,4.6858 30.75951,7.02868 37.41043,7.02863 11.78976,5e-5 27.20738,-4.23224 46.2529,-12.69688 z"
+         style="font-size:464.34283447px;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;font-family:Arial;-inkscape-font-specification:Arial Bold"
+         id="path3764" />
+    </g>
+  </g>
 </svg>

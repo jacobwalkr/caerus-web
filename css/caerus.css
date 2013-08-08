@@ -226,22 +226,159 @@ body {
 
 .lightbox {
     position: absolute;
-    width: 100%;
-    margin: 0 auto;
+    top: 250px;
+    left: 400px;
+    width: 500px;
+    height: 200px;
     z-index: 1008;
-    background: #e9d9f0;
+    background: #f7fbfd;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+    padding: 10px;
 }
 
 .lightboxGreyout {
     position: absolute;
+    top:50px;
     z-index: 1007;
     height: 100%;
     width:100%;
-    background-color: rgba(81,81,81,0.5);
+    background-color: rgba(0,0,0,0.7);
+}
+
+.markerLostForm {
+    margin-bottom: 5px;
+    line-height: 18px;
+    padding: 2px 5px;
+    float: right;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e74c3c;
+}
+
+.markerFoundForm {
+    margin-bottom: 5px;
+    line-height: 18px;
+    padding: 2px 5px;
+    float: right;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2980b9;
+}
+
+#circleRadiusInput {
+    width: 161px;
+    height: 23px;
+}
+
+.lostLabel {
+    width: 300px;
+    font-size: 12px;
+    font-family: Arial;
+    line-height:23px;
+    color: #e74c3c;
+}
+
+.foundLabel {
+    width: 300px;
+    font-size: 12px;
+    font-family: Arial;
+    line-height:23px;
+    color: #2980b9;
+}
+
+#submitLostMarker {
+    line-height: 18px;
+    padding-right: 46px;
+    padding-left: 47px;
+    height: 23px;
+    float: right;
+    border-radius: 5px;
+    border-width: 0;
+    background: #e74c3c;
+    color: #ffffff;
+    box-shadow: 0 2px 0 0 #bf2718;
+    -moz-box-shadow: 0 2px 0 0 #bf2718;
+    -webkit-box-shadow: 0 2px 0 0 #bf2718;
+}
+
+#submitFoundMarker {
+    line-height: 18px;
+    padding-right: 46px;
+    padding-left: 47px;
+    height: 23px;
+    float: right;
+    border-radius: 5px;
+    border-width: 0;
+    background: #2980b9;
+    color: #ffffff;
+    box-shadow: 0 2px 0 0 #1b557a;
+    -moz-box-shadow: 0 2px 0 0 #1b557a;
+    -webkit-box-shadow: 0 2px 0 0 #1b557a;
+}
+
+#submitLostMarker:active {
+    color: #ffffff;
+    position: relative;
+    top: 2px;
+    height: 23px;
+    background-color: #e95c4d;
+    box-shadow: 0 0;
+    -moz-box-shadow: 0 0;
+    -webkit-box-shadow: 0 0;
+}
+
+#submitFoundMarker:active {
+    color: #ffffff;
+    position: relative;
+    top: 2px;
+    height: 23px;
+    background-color: #409ad5;
+    box-shadow: 0 0;
+    -moz-box-shadow: 0 0;
+    -webkit-box-shadow: 0 0;
+}
+
+table {
+    border: 0;
+    width:100%;
+    margin-top:10px;
+}
+
+.lostRule {
+    border-top-style: solid;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-width: 1px;
+    border-color: #e74c3c;
+}
+
+.foundRule {
+    border-top-style: solid;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-width: 1px;
+    border-color: #2980b9;
+}
+
+.lostHeader {
+    font-weight: normal;
+    color: #e74c3c;
+}
+
+.foundHeader {
+    font-weight: normal;
+    color: #2980b9;
 }

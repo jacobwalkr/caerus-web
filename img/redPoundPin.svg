@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="redPin.svg">
+   sodipodi:docname="redPoundPin.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -58,7 +58,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -81,17 +81,14 @@
        d="M 135,352.36218 340,802.26065 545,352.36218 z"
        id="path3761"
        inkscape:connector-curvature="0" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot2985"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="matrix(3.224603,0,0,3.224603,-140.51374,-185.63268)"><flowRegion
-         id="flowRegion2987"><rect
-           id="rect2989"
-           width="254.55844"
-           height="319.20819"
-           x="107.07617"
-           y="65.116577" /></flowRegion><flowPara
-         id="flowPara2991"
-         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">£</flowPara></flowRoot>  </g>
+    <g
+       transform="matrix(3.224603,0,0,3.224603,-140.51374,-185.63268)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot2985">
+      <path
+         d="m 177.30469,165.40852 7.59375,16.73437 c -2.67195,1.45313 -5.75398,2.63672 -9.2461,3.55078 -3.49225,0.91407 -6.87896,1.3711 -10.16015,1.3711 -4.21881,0 -9.8438,-0.9961 -16.875,-2.98828 -7.03129,-1.99219 -12.23441,-2.98828 -15.60938,-2.98828 -5.71877,0 -11.5547,2.03906 -17.50781,6.11718 l -7.52344,-17.01562 c 5.29687,-3.79686 9.10546,-7.83982 11.42578,-12.12891 2.3203,-4.28903 3.48046,-8.37887 3.48047,-12.26953 -1e-5,-1.26558 -0.0938,-2.60152 -0.28125,-4.00781 l -14.625,0 0,-15.53906 11.03907,0 c -1.92189,-5.53119 -2.88283,-11.13275 -2.88282,-16.80469 -1e-5,-5.1093 1.39452,-9.984291 4.1836,-14.625002 2.78904,-4.64053 6.73826,-8.16787 11.84765,-10.582031 5.10935,-2.413959 10.68747,-3.620989 16.73438,-3.621094 9.23432,1.05e-4 16.59369,2.332134 22.07812,6.996094 5.48431,4.664156 8.83587,11.355555 10.05469,20.074223 l -19.05469,2.8125 c -0.89068,-5.01555 -2.50786,-8.62492 -4.85156,-10.828129 -2.3438,-2.203037 -5.27348,-3.304599 -8.78906,-3.304688 -3.75004,8.9e-5 -6.86722,1.253994 -9.35157,3.761717 -2.4844,2.5079 -3.72659,5.66024 -3.72656,9.45703 -3e-5,1.96883 0.33982,4.57039 1.01953,7.80469 0.67966,3.23444 1.51169,6.18756 2.4961,8.85938 l 21.9375,0 0,15.53906 -18.70313,0 c 0.14059,1.03129 0.2109,2.06254 0.21094,3.09375 -4e-5,3.70316 -0.70316,7.12503 -2.10938,10.26562 -1.40628,3.14066 -4.28909,7.26565 -8.64843,12.375 2.5781,-1.31248 5.81247,-1.96873 9.70312,-1.96875 1.64059,2e-5 3.11715,0.0938 4.42969,0.28125 0.65621,0.0938 2.57808,0.53908 5.76562,1.33594 5.67183,1.45314 9.53901,2.1797 11.60157,2.17969 3.65619,1e-5 8.43743,-1.31248 14.34375,-3.9375 z"
+         style="font-size:144px;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold;fill:#ffffff;fill-opacity:1"
+         id="path2993" />
+    </g>
+  </g>
 </svg>
