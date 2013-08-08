@@ -32,7 +32,7 @@ html, body {
 
 #top-bar img {
 	height: 48px;
-	margin-left: 25px;
+	margin-left: 12px;
 	line-height: 50px;
 	z-index: 1010;
 	float: left;
@@ -71,7 +71,7 @@ html, body {
 #placeBluePinButton {
 	padding:10px;
 	background: #2980b9;
-	margin-left: -5px;
+	margin-left: -4px;
 }
 
 #placeRedPinButton,#placeBluePinButton {
@@ -153,9 +153,9 @@ html, body {
 	position: absolute;
 	width: 300px;
 	margin-left: 100px;
-	margin-top: 69px;
+	margin-top: 21px;
 	display: block;
-
+	font-family: 'Lato';
 }
 
 .cd-dropdown > span {
@@ -221,7 +221,7 @@ html, body {
 }
 
 body {
-	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-family: 'Lato';
 }
 
 *,
@@ -397,11 +397,12 @@ table {
 	text-align: center;
 	float: right;
 	padding: 2em 0 3em;
-	margin-top: -88px;
-	margin-right: 200px;
+	margin-top: -83px;
+	margin-right: 120px;
+	line-height: 50px;
 }
 
-.hi-icon-wrap a {
+.hi-icon-wrap a:hover {
 	text-decoration: none;
 }
 
@@ -489,12 +490,4 @@ table {
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
-	float: right;
-	margin-right: -10px;
-	font-size: 0px;
-	cursor: pointer;
-	text-align: center;
-	position: relative;
-	z-index: 1;
-	color: #fff;
 }
