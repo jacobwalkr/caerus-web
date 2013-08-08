@@ -1,7 +1,16 @@
+html {
+    width: 270px;
+    padding: 0;
+}
+
 h1 {
     color: rgba(142, 68, 173, 0.7);
     font-weight: normal;
     font-family: Arial;
+    font-size: 28px;
+    margin-left: 17px;
+    margin-top: 7px;
+    margin-bottom: 7px
 }
 
 hr {
@@ -11,6 +20,8 @@ hr {
     border-bottom-style: none;
     border-width: 1px;
     border-color: rgba(142, 68, 173, 0.7);
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 input {
@@ -21,11 +32,22 @@ input {
     border-color: #8e44ad;
     border-style: solid;
     border-width: 1px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#signUp {
+    margin-left: 10px;
+}  
+
+#email, #password, #login {
+    margin-left: 18px;
 }
 
 #login, #signUp {
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 18px;
+    width: 98px;
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 5px;
@@ -49,4 +71,11 @@ input {
     box-shadow: 0 0 0 0;
     -moz-box-shadow: 0 0 0 0;
     -webkit-box-shadow: 0 0 0 0;
+}
+
+.textInputFields {
+    width: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0 1px 2px 0 #b075c9 inset;
 }
