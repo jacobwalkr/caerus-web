@@ -35,6 +35,7 @@ html, body {
 	margin-left: 25px;
 	line-height: 50px;
 	z-index: 1010;
+	float: left;
 }
 
 .profile-pic {
@@ -62,22 +63,21 @@ html, body {
 }
 
 #placeRedPinButton {
-	left: 200px;
+	margin-left: 10px;
 	padding:10px;
 	background: #e74c3c;
 }
 
 #placeBluePinButton {
-	left: 360px;
 	padding:10px;
 	background: #2980b9;
+	margin-left: -5px;
 }
 
-#placeRedPinButton,#placeBluePinButton, #logoButton {
-	position: absolute;
-	top: 0px;
+#placeRedPinButton,#placeBluePinButton {
+	position: relative;
+	display: inline-block;
 	height: 50px;
-	padding: 10px;
 	z-index: 1010;
 	color: #ffffff;
 	border: none;
@@ -481,4 +481,13 @@ table {
 	-webkit-animation: spinAround 2s linear infinite;
 	-moz-animation: spinAround 2s linear infinite;
 	animation: spinAround 2s linear infinite;
+}
+
+.login {
+	width: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	float: right;
+	margin-right: -10px;
 }
