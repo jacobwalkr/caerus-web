@@ -32,7 +32,7 @@ html, body {
 
 #top-bar img {
 	height: 48px;
-	margin-left: 25px;
+	margin-left: 12px;
 	line-height: 50px;
 	z-index: 1010;
 	float: left;
@@ -71,7 +71,7 @@ html, body {
 #placeBluePinButton {
 	padding:10px;
 	background: #2980b9;
-	margin-left: -5px;
+	margin-left: -4px;
 }
 
 #placeRedPinButton,#placeBluePinButton {
@@ -85,6 +85,7 @@ html, body {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	outline: none;
+	font-family: 'Lato';
 }
 
 #placeRedPinButton:hover, #placeBluePinButton:hover, #logoButton:hover {
@@ -152,9 +153,9 @@ html, body {
 	position: absolute;
 	width: 300px;
 	margin-left: 100px;
-	margin-top: 69px;
+	margin-top: 21px;
 	display: block;
-
+	font-family: 'Lato';
 }
 
 .cd-dropdown > span {
@@ -220,7 +221,7 @@ html, body {
 }
 
 body {
-	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-family: 'Lato';
 }
 
 *,
@@ -397,13 +398,14 @@ table {
 
 .hi-icon-wrap {
 	text-align: center;
-	float: right;
 	padding: 2em 0 3em;
-	margin-top: -88px;
-	margin-right: 200px;
+	margin-top: -83px;
+	float: right;
+	margin-right: 120px;
+	line-height: 50px;
 }
 
-.hi-icon-wrap a {
+.hi-icon-wrap a:hover {
 	text-decoration: none;
 }
 
@@ -486,11 +488,16 @@ table {
 	animation: spinAround 2s linear infinite;
 }
 
+#loginButton {
+	float: right;
+	margin-right: -220px;
+}
+
 .login {
 	width: 100px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
 	float: right;
-	margin-right: -10px;
+	position: absolute;
 }
