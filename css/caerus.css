@@ -485,5 +485,10 @@ table {
 }
 
 .login {
-	width: 200px;
+	width: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	float: right;
+	margin-right: -10px;
 }
