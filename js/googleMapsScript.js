@@ -11,6 +11,17 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, "load", initialize);
 var pinColour = "#e74c3c";
+//Draw a lightbox. Argument is lightbox id
+function drawLightbox(lightboxID) {
+    $("<div/>", {
+    id: lightboxID,
+    class: "lightbox"
+    }).prependTo("body");
+    $("<div/>", {
+    id: lightboxID + "Greyout",
+    class: "lightboxGreyout"
+    }).prependTo("body");
+};
 //Add pin to map
 function codeAddress(pinColour) {
     var customIcon;
@@ -47,6 +58,7 @@ function codeAddress(pinColour) {
                 customIcon = "img/bluePhonePin.svg";
             }
         break;
+        //Not getting images properly
         case "Wallets and Purses":
             if (pinColour === "#e74c3c") {
                 customIcon = "img/redPoundPin.svg";
@@ -67,7 +79,27 @@ function codeAddress(pinColour) {
             }
         break;
     }
-    var address = document.getElementById("address").value;
+    var pin = {
+        url:customIcon,
+        scaledSize: new google.maps.Size(20,34.09,"px","px")
+    };
+    window.marker = new google.maps.Marker({
+        map: map,
+        position: map.getCenter(),
+        draggable: true,
+        icon: pin
+    });
+    google.maps.event.addListener(marker,"click",function() {drawLightbox("markerLightbox")});
+    circle = new google.maps.Circle({
+        map: map,
+        fillColor:pinColour,
+        fillOpacity:0.5,
+        strokeColor:pinColour,
+        center: window.marker.getPosition(),
+        radius: parseInt(document.getElementById("circleRadius").value)
+    });
+    circle.bindTo("center",marker,"position");
+/*    var address = document.getElementById("address").value;
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { "address": address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -82,6 +114,7 @@ function codeAddress(pinColour) {
                 draggable: true,
                 icon: pin
             });
+            google.maps.event.addListener(marker,"click",drawLightbox(markerLightbox));
             circle = new google.maps.Circle({
                 map: map,
                 fillColor:pinColour,
@@ -93,28 +126,10 @@ function codeAddress(pinColour) {
             circle.bindTo("center",marker,"position");
         }
         else if (status === "ZERO_RESULTS") {
-            var pin = {
-                url:customIcon,
-                scaledSize: new google.maps.Size(20,34.09,"px","px")
-            };
-            window.marker = new google.maps.Marker({
-                map: map,
-                position: map.getCenter(),
-                draggable: true,
-                icon: pin
-            });
-            circle = new google.maps.Circle({
-                map: map,
-                fillColor:pinColour,
-                fillOpacity:0.5,
-                strokeColor:pinColour,
-                center: window.marker.getPosition(),
-                radius: parseInt(document.getElementById("circleRadius").value)
-            });
-            circle.bindTo("center",marker,"position");
+            
         }
         else {
         alert("Geocode was not successful for the following reason: " + status);
         }
-    });
+    });*/
 }

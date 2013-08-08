@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
+        </script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/caerus.css">
         <title>Welcome to Reunitem</title>
@@ -23,9 +26,8 @@
         </select>
         <input type="text" id="address" placeholder="Address or postcode"/>
         <input type="number" id="circleRadius" value="0" min="0" step="10"/>
-        <canvas id="buttonBorder"></canvas>
         <div id="map-canvas"></div>
-        <!--Scripts start here-->
+        <!--Scripts start here (place in body so it loads properly)-->
         <script type="text/javascript" src="js/jquery.dropdown.js"></script>
         <script type="text/javascript">
             $( function() {
@@ -37,9 +39,6 @@
             });
         </script>
         <script src="js/modernizr.custom.63321.js"></script>
-        <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0R2eugcQaxpF-czy8hHR9dHcPi3-2k38&sensor=true">
-        </script>
         <script src="js/googleMapsScript.js"></script>
     </body>
 </html>
