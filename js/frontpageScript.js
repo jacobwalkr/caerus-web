@@ -56,6 +56,7 @@ function removeLightbox(lightboxID) {
 //Add pin to map
 function codeAddress(pinColour) {
     var customIcon;
+    var circleRadius = parseInt(document.getElementById("circleRadiusInput").value);
     switch ($("div.cd-dropdown span").first().text()) {
         case "Clothing":
             if (pinColour === "#e74c3c") {
@@ -134,7 +135,7 @@ function codeAddress(pinColour) {
                 fillOpacity:0.5,
                 strokeColor:pinColour,
                 center: window.marker.getPosition(),
-                radius: parseInt(document.getElementById("circleRadiusInput").value)
+                radius: circleRadius
             });
             circle.bindTo("center",marker,"position");
         }
@@ -151,7 +152,7 @@ function codeAddress(pinColour) {
                 fillOpacity: 0.5,
                 strokeColor: pinColour,
                 center: window.marker.getPosition(),
-                radius: parseInt(document.getElementById("circleRadiusInput").value)
+                radius: circleRadius
             });
             circle.bindTo("center",marker,"position");
         }
