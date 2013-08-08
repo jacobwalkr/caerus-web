@@ -395,9 +395,9 @@ table {
 
 .hi-icon-wrap {
 	text-align: center;
-	float: right;
 	padding: 2em 0 3em;
 	margin-top: -83px;
+	float: right;
 	margin-right: 120px;
 	line-height: 50px;
 }
@@ -485,9 +485,16 @@ table {
 	animation: spinAround 2s linear infinite;
 }
 
+#loginButton {
+	float: right;
+	margin-right: -220px;
+}
+
 .login {
 	width: 100px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
+	float: right;
+	position: absolute;
 }
