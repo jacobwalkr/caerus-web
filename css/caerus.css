@@ -320,6 +320,7 @@ body {
     box-shadow: 0 2px 0 0 #bf2718;
     -moz-box-shadow: 0 2px 0 0 #bf2718;
     -webkit-box-shadow: 0 2px 0 0 #bf2718;
+    margin-top: 10px;
 }
 
 #submitFoundMarker {
@@ -335,6 +336,7 @@ body {
     box-shadow: 0 2px 0 0 #1b557a;
     -moz-box-shadow: 0 2px 0 0 #1b557a;
     -webkit-box-shadow: 0 2px 0 0 #1b557a;
+    margin-top: 10px;
 }
 
 #submitLostMarker:active {
@@ -523,4 +525,12 @@ table {
     border-color: white;
     background-color: #8e44ad;
     color: white;
+}
+
+iframe {
+    border: 0;
+}
+
+.loginLightbox {
+    
 }
