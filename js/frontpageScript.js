@@ -26,6 +26,8 @@ jQuery.fn.center = function () {
     return this;
 }
 function drawLightbox(lightboxID) {
+    removeLightbox("loginLightbox");
+    removeLightbox("markerLightbox");
     $("<div/>", {
         id: lightboxID + "Greyout",
         class: "lightboxGreyout"
