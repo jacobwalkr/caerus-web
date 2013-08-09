@@ -34,7 +34,7 @@ function addPinFromDatabase(pinData) {
 function listMarkers() {
     pinData = jQuery.ajax({
         url: "api.reunitem.io",
-        error: drawLightbox("databaseAlert")
+//        error: drawLightbox("databaseAlert")
     });
     var pinDataCount = pinData.length();
     for (i = 0; i < pinDataCount; i++) {

@@ -5,6 +5,7 @@ var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><input
 var filterAlertHTML = '<h3 class="filterAlert">Please choose a category from the dropdown menu</h3><input type="button" class="closeFilterAlert" onclick="removeLightbox(\'filterAlert\')" value="X">';
 var databaseAlertHTML = '<h3 class="databaseAlert">Unable to connect to reunitem database</h3>';
 var loginLightboxHTML = '<input type="button" class="closeLoginLightbox" onclick="removeLightbox(\'loginLightbox\')" value="X"><iframe src="loginForm.html"></iframe>';
+var videoHTML = '<input type="button" class="closeVideoLightbox" onclick="removeLightbox(\'videoLightbox\')" value="X">'
 //Objects for comparison when creating markers
 redCategories = {"Clothing":"img/redTeePin.svg","Computers":"img/redComputerPin.svg","Keys":"img/redKeyPin.svg","Mobile Devices":"img/redPhonePin.svg","Wallets and Purses":"img/redPoundPin.svg","Other":"img/redPin.svg","Filter":"img/redPin.svg"}
 blueCategories = {"Clothing":"img/blueTeePin.svg","Computers":"img/blueComputerPin.svg","Keys":"img/blueKeyPin.svg","Mobile Devices":"img/bluePhonePin.svg","Wallets and Purses":"img/bluePoundPin.svg","Other":"img/bluePin.svg","Filter":"img/bluePin.svg"}
@@ -149,3 +150,7 @@ function circleOverlapTest(marker1,marker2,circle1,circle2) {
         return true;
     }
 }
+$("#video").click(function() {
+    drawLightbox("videoLightbox");
+    $(videoHTML).appendTo("#videoLightbox");
+});

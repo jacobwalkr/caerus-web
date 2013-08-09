@@ -509,26 +509,11 @@ table {
 }
 
 .closeMarkerLightbox {
-    float: right;
-    position: relative;
     top: -117px;
     left: 29px;
-    font-size: 25px;
-    font-weight: bold;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    margin-top: 15px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    border-style: solid;
-    border-color: #8e44ad;
-    background-color: white;
-    color: #8e44ad;
-    border-width: 4px;
 }
 
-.closeMarkerLightbox:hover, .closeLoginLightbox:hover {
+.closeMarkerLightbox:hover, .closeLoginLightbox:hover, .closeFilterAlert:hover, .closeVideoLightbox:hover {
     border-color: white;
     background-color: #8e44ad;
     color: white;
@@ -585,23 +570,8 @@ iframe {
 }
 
 .closeLoginLightbox {
-    float: right;
-    position: relative;
     top: -36px;
     left: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    margin-top: 15px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    border-style: solid;
-    border-color: #8e44ad;
-    background-color: white;
-    color: #8e44ad;
-    border-width: 4px;
 }
 
 .databaseAlert, .filterAlert {
@@ -614,10 +584,17 @@ iframe {
 }
 
 .closeFilterAlert {
-    float: right;
     position: relative;
     top: -87px;
     left: 29px;
+}
+
+.closeVideoLightbox {
+    
+}
+
+.closeVideoLightbox, .closeLoginLightbox .closeFilterAlert, .closeMarkerLightbox {
+    float: right;
     font-size: 25px;
     font-weight: bold;
     width: 40px;
@@ -631,10 +608,5 @@ iframe {
     background-color: white;
     color: #8e44ad;
     border-width: 4px;
-}
-
-.closeFilterAlert:hover {
-    color: white;
-    background-color: #8e44ad;
-    border-color: white;
+    position: relative;
 }
