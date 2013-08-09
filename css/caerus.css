@@ -579,7 +579,7 @@ iframe {
     -moz-transition-property: background;
 }
 
-.buttonLogon:hover: {
+.buttonLogon:hover {
     color: #8e44ad;
     background-color: white;
 }
