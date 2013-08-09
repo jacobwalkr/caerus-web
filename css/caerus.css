@@ -603,3 +603,38 @@ iframe {
     color: #8e44ad;
     border-width: 4px;
 }
+
+.databaseAlert, .filterAlert {
+    color: rgba(142, 68, 173, 0.5);
+    font-family: Arial;
+}
+
+.filterAlert {
+    padding-bottom: 0px;
+}
+
+.closeFilterAlert {
+    float: right;
+    position: relative;
+    top: -87px;
+    left: 29px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-style: solid;
+    border-color: #8e44ad;
+    background-color: white;
+    color: #8e44ad;
+    border-width: 4px;
+}
+
+.closeFilterAlert:hover {
+    color: white;
+    background-color: #8e44ad;
+    border-color: white;
+}
