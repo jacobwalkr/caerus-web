@@ -43,8 +43,8 @@ function listMarkers() {
 }
 function submitPinData(title,description,category,position,circleRadius,user) {
     var latLngArray = position.split(", ");
-    var latitude = latLngArray[0];
-    var longitude = latLngArray[1];
+    var lat = latLngArray[0];
+    var lng = latLngArray[1];
     jQuery.ajax({
         type: post,
         processData: false,
