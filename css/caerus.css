@@ -79,7 +79,7 @@ html, body {
 	display: inline-block;
 	height: 50px;
 	z-index: 1010;
-	color: #ffffff;
+	color: white;
 	border: none;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -95,12 +95,12 @@ html, body {
 }
 
 #placeRedPinButton:hover {
-	background-color: #ffffff;
+	background-color: white;
 	color: #e74c3c;
 }
 
 #placeBluePinButton:hover {
-	background-color: #ffffff;
+	background-color: white;
 	color: #2980b9;
 }
 
@@ -316,7 +316,7 @@ body {
     border-radius: 5px;
     border-width: 0;
     background: #e74c3c;
-    color: #ffffff;
+    color: white;
     box-shadow: 0 2px 0 0 #bf2718;
     -moz-box-shadow: 0 2px 0 0 #bf2718;
     -webkit-box-shadow: 0 2px 0 0 #bf2718;
@@ -331,14 +331,14 @@ body {
     border-radius: 5px;
     border-width: 0;
     background: #2980b9;
-    color: #ffffff;
+    color: white;
     box-shadow: 0 2px 0 0 #1b557a;
     -moz-box-shadow: 0 2px 0 0 #1b557a;
     -webkit-box-shadow: 0 2px 0 0 #1b557a;
 }
 
 #submitLostMarker:active {
-    color: #ffffff;
+    color: white;
     position: relative;
     top: 2px;
     height: 23px;
@@ -349,7 +349,7 @@ body {
 }
 
 #submitFoundMarker:active {
-    color: #ffffff;
+    color: white;
     position: relative;
     top: 2px;
     height: 23px;
@@ -468,14 +468,14 @@ table {
 }
 
 .hi-icon-effect-6 .hi-icon {
-	box-shadow: 0 0 0 4px rgba(255,255,255,1);
+	box-shadow: 0 0 0 4px white;
 	-webkit-transition: background 0.2s, color 0.2s;
 	-moz-transition: background 0.2s, color 0.2s;
 	transition: background 0.2s, color 0.2s;
 }
 
 .no-touch .hi-icon-effect-6 .hi-icon:hover {
-	background: rgba(255,255,255,1);
+	background: white;
 	color: #8e44ad;
 }
 
@@ -514,13 +514,13 @@ table {
     -webkit-border-radius: 20px;
     border-style: solid;
     border-color: #8e44ad;
-    background-color: #ffffff;
+    background-color: white;
     color: #8e44ad;
     border-width: 4px;
 }
 
 .closeLightbox:hover {
-    border-color: #ffffff;
+    border-color: white;
     background-color: #8e44ad;
-    color: #ffffff;
+    color: white;
 }
