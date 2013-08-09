@@ -145,7 +145,7 @@ html, body {
 
 .cd-active.cd-dropdown ul li span:hover {
 	background: #8e44ad;
-	color: #fff;
+	color: #ffffff;
 }
 
 .cd-dropdown,
@@ -406,6 +406,8 @@ table {
 
 .hi-icon-wrap a:hover {
 	text-decoration: none;
+    color: #8e44ad;
+    background-color: white;
 }
 
 .hi-icon {
