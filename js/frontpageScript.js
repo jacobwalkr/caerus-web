@@ -13,6 +13,7 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    listMarkers();
 }
 google.maps.event.addDomListener(window, "load", initialize);
 var pinColour = "#e74c3c";
@@ -70,7 +71,7 @@ function addPin(pinColour) {
         customIcon = blueCategories[selectedCategory];
     }
     var pin = {
-        url:customIcon,
+        url: customIcon,
         scaledSize: new google.maps.Size(20,34.09,"px","px")
     };
     //Changes the address or postcode given to a Latlng
