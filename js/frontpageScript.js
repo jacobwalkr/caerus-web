@@ -79,10 +79,12 @@ function addPin(pinColour) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( {"address": address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
+            markerPos = results[0].geometry.location;
+            map.setCenter(markerPos);
             window.marker = new google.maps.Marker({
+                title: $("#title").value,
                 map: map,
-                position: results[0].geometry.location,
+                position: markerPos,
                 draggable: true,
                 icon: pin
             });
@@ -91,15 +93,17 @@ function addPin(pinColour) {
                 fillColor: pinColour,
                 fillOpacity: 0.5,
                 strokeColor: pinColour,
-                center: window.marker.getPosition(),
+                center: markerPos,
                 radius: circleRadius
             });
             circle.bindTo("center",marker,"position");
         }
         else if (status === "ZERO_RESULTS") {
+            markerPos = map.getCenter();
             window.marker = new google.maps.Marker({
+                title: title,
                 map: map,
-                position: map.getCenter(),
+                position: markerPos,
                 draggable: true,
                 icon: pin
             });
@@ -108,7 +112,7 @@ function addPin(pinColour) {
                 fillColor: pinColour,
                 fillOpacity: 0.5,
                 strokeColor: pinColour,
-                center: window.marker.getPosition(),
+                center: markerPos,
                 radius: circleRadius
             });
             circle.bindTo("center",marker,"position");
@@ -117,6 +121,7 @@ function addPin(pinColour) {
         alert("Geocode was not successful for the following reason: " + status);
         }
     });
+    submitPinData(title,description,selectedCategory,markerPos,circleRadius,user);
     removeLightbox("markerLightbox");
 }
 //Returns true if the radii of the circles overlap
