@@ -321,6 +321,7 @@ body {
     -moz-box-shadow: 0 2px 0 0 #bf2718;
     -webkit-box-shadow: 0 2px 0 0 #bf2718;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #submitFoundMarker {
@@ -337,6 +338,7 @@ body {
     -moz-box-shadow: 0 2px 0 0 #1b557a;
     -webkit-box-shadow: 0 2px 0 0 #1b557a;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #submitLostMarker:active {
@@ -501,9 +503,12 @@ table {
 	border-radius: 100px;
 	float: right;
 	position: absolute;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
-.closeLightbox {
+.closeMarkerLightbox {
     float: right;
     position: relative;
     top: -117px;
@@ -523,16 +528,78 @@ table {
     border-width: 4px;
 }
 
-.closeLightbox:hover {
+.closeMarkerLightbox:hover, .closeLoginLightbox:hover {
     border-color: white;
     background-color: #8e44ad;
     color: white;
 }
 
 iframe {
+    position: relative;
+    top: -50px;
     border: 0;
+    height: 224px;
+    width: 270px;
 }
 
-.loginLightbox {
-    
+#loginLightbox {
+    height: 224px;
+    width: 270px;
+    padding: 0;
+}
+
+.buttonLogon {
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: white;
+    color: white;
+    background-color: #8e44ad;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    margin-right: 12px;
+    margin-top: 7px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+    font-family: 'Lato', Arial;
+    transition-duration: 0.2s, 0.2s;
+    -webkit-transition-duration: 0.2s, 0.2s;
+    -moz-transition-duration: 0.2s, 0.2s;
+    transition-property: background;
+    -webkit-transition-property: background;
+    -moz-transition-property: background;
+}
+
+.buttonLogon:hover: {
+    color: #8e44ad;
+    background-color: white;
+}
+
+.closeLoginLightbox {
+    float: right;
+    position: relative;
+    top: -36px;
+    left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-style: solid;
+    border-color: #8e44ad;
+    background-color: white;
+    color: #8e44ad;
+    border-width: 4px;
 }
