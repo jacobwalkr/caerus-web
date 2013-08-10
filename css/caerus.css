@@ -453,7 +453,7 @@ table {
 	-webkit-font-smoothing: antialiased;
 }
 
-.icon-question, .icon-twitter, .icon-github, .icon-film {
+.icon-question, .icon-film {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -466,12 +466,7 @@ table {
 .icon-question:before {
 	content: "\f128";
 }
-.icon-twitter:before {
-	content: "\e000";
-}
-.icon-github:before {
-	content: "\f09b";
-}
+
 .icon-film:before {
 	content: "\e001";
 }
@@ -520,6 +515,9 @@ table {
     border-color: white;
     background-color: #8e44ad;
     color: white;
+    -webkit-transition: background 0.2s, color 0.2s;
+    -moz-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .loginiframe {
@@ -666,4 +664,10 @@ table {
     position: relative;
     top: -40px;
     z-index: 1500;
+}
+
+@media screen and (max-width:755px) {  
+    .:after{ 
+        
+    }
 }
