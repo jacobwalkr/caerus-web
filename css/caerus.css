@@ -667,9 +667,6 @@ table {
     z-index: 1500;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .loginh1, .loginhr, .logininput {
     position: relative;
     top: 30px;
@@ -755,4 +752,10 @@ table {
     text-align: center;
     padding-left: 14px;
     padding-right: 14px;
+}
+
+@media screen and (max-width:755px) {  
+    .:after{ 
+        
+    }
 }
