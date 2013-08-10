@@ -150,7 +150,7 @@ function circleOverlapTest(marker1,marker2,circle1,circle2) {
         return true;
     }
 }
-$("#video").click(function() {
+function addVideoLightbox() {
     drawLightbox("videoLightbox");
     $(videoHTML).appendTo("#videoLightbox");
-});
+}

@@ -529,8 +529,9 @@ iframe {
 
 #loginLightbox {
     height: 224px;
-    width: 270px;
-    padding: 0;
+    width: 290px;
+    padding-top: 20px;
+    padding-right: 40px;
 }
 
 .buttonLogon {
@@ -570,8 +571,8 @@ iframe {
 }
 
 .closeLoginLightbox {
-    top: -36px;
-    left: 20px;
+    top: -40px;
+    left: 60px;
 }
 
 .databaseAlert, .filterAlert {
@@ -593,7 +594,7 @@ iframe {
     
 }
 
-.closeVideoLightbox, .closeLoginLightbox .closeFilterAlert, .closeMarkerLightbox {
+.closeVideoLightbox, .closeLoginLightbox , .closeFilterAlert, .closeMarkerLightbox {
     float: right;
     font-size: 25px;
     font-weight: bold;

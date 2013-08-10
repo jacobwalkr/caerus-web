@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="bluePin.svg">
+   sodipodi:docname="redPin.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="166.01786"
+     inkscape:cx="-149.14973"
      inkscape:cy="388.40151"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -58,7 +58,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -81,5 +81,15 @@
        d="M 135,352.36218 340,802.26065 545,352.36218 z"
        id="path3761"
        inkscape:connector-curvature="0" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path2987"
+       sodipodi:cx="220"
+       sodipodi:cy="220.10153"
+       sodipodi:rx="80"
+       sodipodi:ry="80"
+       d="m 300,220.10153 a 80,80 0 1 1 -160,0 80,80 0 1 1 160,0 z"
+       transform="translate(120,52.26062)" />
   </g>
 </svg>
