@@ -549,7 +549,7 @@ iframe {
     border-color: white;
     color: white;
     background-color: #8e44ad;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: normal;
     margin-bottom: 15px;
     margin-left: 8px;
@@ -566,8 +566,11 @@ iframe {
     -webkit-transition-duration: 0.2s, 0.2s;
     -moz-transition-duration: 0.2s, 0.2s;
     transition-property: background;
+    text-transform: uppercase;
     -webkit-transition-property: background;
     -moz-transition-property: background;
+    padding-top: 3px;
+    padding-bottom: 4px;
 }
 
 .buttonLogon:hover {

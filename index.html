@@ -24,7 +24,6 @@
                     <a href="#" class="hi-icon icon-film" id="video">Video</a>
                 </div>
             </section>
-            <!--<div id="fb-root"></div>-->
             <input type="button" class="buttonLogon" value="login" onclick="drawLightbox('loginLightbox')">
         </header>
         <select id="cd-dropdown" name="cd-dropdown" class="cd-select">
@@ -37,7 +36,8 @@
             <option value="6">Other</option>
         </select>
         <div id="map-canvas"></div>
-        <!--Scripts start here (placed in body so it loads properly)-->
+        <!--Scripts start here-->
+        <script type="text/javascript" src="js/initialise.js"></script>
         <script type="text/javascript" src="js/jquery.dropdown.js"></script>
         <script type="text/javascript">
             $( function() {
@@ -48,7 +48,8 @@
             });
         </script>
         <script src="js/modernizr.custom.63321.js"></script>
-        <script src="js/frontpageScript.js"></script>
-        <script src="js/caerus-api-integration.js"></script>
+        <script src="js/addPins.js"></script>
+        <script src="js/databaseSubmissions.js"></script>
+        <script src="js/lightboxes.js"></script>
     </body>
 </html>

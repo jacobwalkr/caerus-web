@@ -1,12 +1,18 @@
+//Adds single pin at a time. The function listMarkers calls more than once in order to add all pins
 function addPinFromDatabase(pinData) {
     var customIcon;
     var categories = ["Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other"];
-    if (pinColour === "#e74c3c") {
+    if (pinData.reported_as == "lost") {
+        pinColour = "#e74c3c";
+    }
+    else if (pinData.reported_as == "found") {
+        pinColour = "#2980b9";
+    }
+    if (pinColour == "#e74c3c") {
         customIcon = redCategories[categories[pinData.category]];
     }
-    else if (pinColour === "#2980b9") {
+    else if (pinColour == "#2980b9") {
         customIcon = blueCategories[categories[pinData.category]];
-        console.log(customIcon);
     }
     var pin = {
         url: customIcon,
@@ -36,7 +42,7 @@ function listMarkers() {
         dataType: "jsonp",
         mimeType: "application/javascript",
         url: "http://api.reunitem.io/items",
-        error: /*drawLightbox("databaseAlert"), console.log(textStatus),*/ function(jqXHR,textStatus,errorThrown) {console.log(textStatus); console.log(errorThrown);},
+        error: drawLightbox("databaseAlert"),
         success: function(data) {
             console.log(data[0]);
             var pinDataCount = data.length;
@@ -46,10 +52,13 @@ function listMarkers() {
         }
     });
 }
-function submitPinData(title,description,category,position,circleRadius,user) {
-    jQuery.ajax({
-        type: post,
-        url: "http://api.reunitem.io/items",
-        data: {title: title,description: description,category: category,latitude: markerPos.lat(),longitude: markerPos.lng(),radius: circleRadius,reporter: user}
-    });
+function initialise() {
+    var mapOptions = {
+        center: new google.maps.LatLng(54, -2),
+        zoom: 6,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    listMarkers();
 }
+google.maps.event.addDomListener(window, "load", initialise);
