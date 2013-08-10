@@ -453,7 +453,7 @@ table {
 	-webkit-font-smoothing: antialiased;
 }
 
-.icon-question, .icon-twitter, .icon-github, .icon-film {
+.icon-question, .icon-film {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -466,12 +466,7 @@ table {
 .icon-question:before {
 	content: "\f128";
 }
-.icon-twitter:before {
-	content: "\e000";
-}
-.icon-github:before {
-	content: "\f09b";
-}
+
 .icon-film:before {
 	content: "\e001";
 }
@@ -520,6 +515,9 @@ table {
     border-color: white;
     background-color: #8e44ad;
     color: white;
+    -webkit-transition: background 0.2s, color 0.2s;
+    -moz-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .loginForm {
@@ -669,6 +667,7 @@ table {
     z-index: 1500;
 }
 
+<<<<<<< HEAD
 .loginh1, .loginhr, .logininput {
     position: relative;
     top: 30px;
@@ -754,4 +753,10 @@ table {
     text-align: center;
     padding-left: 14px;
     padding-right: 14px;
+=======
+@media screen and (max-width:755px) {  
+    .:after{ 
+        
+    }
+>>>>>>> bc25fa5f73d02c42ca6f4c8fe5fc03e2bbaaf9ac
 }
