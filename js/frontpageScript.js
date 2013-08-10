@@ -1,7 +1,7 @@
 var geocoder, map, circle;
 //html to be added to lightboxes
-var lostLightboxHTML = '<h1 class="lostHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="lostRule"><form><table><tr><td><label class="lostLabel">What have you lost?</label></td><td><input type="text" id= "title" class="markerLostForm" placeholder="Item"></td></tr><tr><td><label class="lostLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerLostForm"></td></tr><tr><td><label class="lostLabel">Not sure where you lost it? Set an area in meters:</label></td><td><input type="text" class="markerLostForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitLostMarker" onclick="addPin(\'#e74c3c\')" value="Add marker"></td></tr></table></form>';
-var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="foundRule"><form><table><tr><td><label class="foundLabel">What have you found?</label></td><td><input type="text" id= "title" class="markerFoundForm" placeholder="Item"></td></tr><tr><td><label class="foundLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerFoundForm"></td></tr><tr><td><label class="foundLabel">Not sure where you found it? Set an area in meters:</label></td><td><input type="text" class="markerFoundForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitFoundMarker" onclick="addPin(\'#2980b9\')" value="Add marker"></td></tr></table></form>';
+var lostLightboxHTML = '<h1 class="lostHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="lostRule"><form><table><tr><td><label class="lostLabel">What have you lost?</label></td><td><input type="text" id= "title" class="markerLostForm" placeholder="Item"></td></tr><tr><td><label class="lostLabel"> Describe your item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerLostForm" placeholder="Description"></textarea></td></tr><tr><td><label class="lostLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerLostForm"></td></tr><tr><td><label class="lostLabel">Not sure where you lost it? Set an area in meters:</label></td><td><input type="text" class="markerLostForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitLostMarker" onclick="addPin(\'#e74c3c\')" value="Add marker"></td></tr></table></form>';
+var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="foundRule"><form><table><tr><td><label class="foundLabel">What have you found?</label></td><td><input type="text" id= "title" class="markerFoundForm" placeholder="Item"></td></tr><tr><td><label class="foundLabel"> Describe the item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerFoundForm" placeholder="Description"></textarea></td></tr><tr><td><label class="foundLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerFoundForm"></td></tr><tr><td><label class="foundLabel">Not sure where you found it? Set an area in meters:</label></td><td><input type="text" class="markerFoundForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitFoundMarker" onclick="addPin(\'#2980b9\')" value="Add marker"></td></tr></table></form>';
 var filterAlertHTML = '<h3 class="filterAlert">Please choose a category from the dropdown menu</h3><input type="button" class="closeFilterAlert" onclick="removeLightbox(\'filterAlert\')" value="X">';
 var databaseAlertHTML = '<h3 class="databaseAlert">Unable to connect to reunitem database</h3>';
 var loginLightboxHTML = '<input type="button" class="closeLoginLightbox" onclick="removeLightbox(\'loginLightbox\')" value="X"><iframe src="loginForm.html"></iframe>';
@@ -23,10 +23,7 @@ var pinColour = "#e74c3c";
 //Function added to JQuery to center an element
 jQuery.fn.center = function () {
     this.css("position","absolute");
-    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
-                                                $(window).scrollTop()) + "px");
-    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
-                                                $(window).scrollLeft()) + "px");
+    this.css("left", ($(window).width() - $(this).outerWidth()) / 2);
     return this;
 }
 function drawLightbox(lightboxID) {
@@ -95,7 +92,7 @@ function addPin(pinColour) {
         scaledSize: new google.maps.Size(20,34.09,"px","px")
     };
     //Changes the address or postcode given to a Latlng
-    var address = document.getElementById("address").value;
+    var address = $("address").value;
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( {"address": address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -121,7 +118,7 @@ function addPin(pinColour) {
         else if (status === "ZERO_RESULTS") {
             markerPos = map.getCenter();
             window.marker = new google.maps.Marker({
-                title: title,
+                title: $("title").value,
                 map: map,
                 position: markerPos,
                 draggable: true,
@@ -141,7 +138,8 @@ function addPin(pinColour) {
         alert("Geocode was not successful for the following reason: " + status);
         }
     });
-    submitPinData(title,description,selectedCategory,markerPos,circleRadius,user);
+    var description = $("#description");
+//    submitPinData(title,description,selectedCategory,markerPos,circleRadius,user);
     removeLightbox("markerLightbox");
 }
 //Returns true if the radii of the circles overlap

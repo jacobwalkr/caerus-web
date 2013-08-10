@@ -27,7 +27,7 @@ function addPinFromDatabase(pinData) {
         fillOpacity: 0.5,
         strokeColor: pinColour,
         center: window.marker.getPosition(),
-        radius: parseInt(pinData.radius)
+        radius: pinData.radius
     });
 }
 function listMarkers() {
