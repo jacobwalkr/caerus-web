@@ -753,9 +753,3 @@ table {
     padding-left: 14px;
     padding-right: 14px;
 }
-
-@media screen and (max-width:755px) {  
-    .:after{ 
-        
-    }
-}
