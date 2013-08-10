@@ -665,9 +665,3 @@ table {
     top: -40px;
     z-index: 1500;
 }
-
-@media screen and (max-width:755px) {  
-    .:after{ 
-        
-    }
-}
