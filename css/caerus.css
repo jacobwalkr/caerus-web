@@ -668,6 +668,7 @@ table {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .loginh1, .loginhr, .logininput {
     position: relative;
     top: 30px;
@@ -754,9 +755,14 @@ table {
     padding-left: 14px;
     padding-right: 14px;
 =======
+=======
+>>>>>>> bc25fa5f73d02c42ca6f4c8fe5fc03e2bbaaf9ac
 @media screen and (max-width:755px) {  
     .:after{ 
         
     }
+<<<<<<< HEAD
+>>>>>>> bc25fa5f73d02c42ca6f4c8fe5fc03e2bbaaf9ac
+=======
 >>>>>>> bc25fa5f73d02c42ca6f4c8fe5fc03e2bbaaf9ac
 }
