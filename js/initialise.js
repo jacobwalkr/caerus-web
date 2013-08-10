@@ -42,9 +42,8 @@ function listMarkers() {
         dataType: "jsonp",
         mimeType: "application/javascript",
         url: "http://api.reunitem.io/items",
-        error: drawLightbox("databaseAlert"),
+//        error: drawLightbox("databaseAlert"),
         success: function(data) {
-            console.log(data[0]);
             var pinDataCount = data.length;
             for (i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);

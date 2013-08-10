@@ -1,15 +1,36 @@
 //html to be added to lightboxes
-var lostLightboxHTML = '<h1 class="lostHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="lostRule"><form><table><tr><td><label class="lostLabel">What have you lost?</label></td><td><input type="text" id= "title" class="markerLostForm" placeholder="Item"></td></tr><tr><td><label class="lostLabel"> Describe your item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerLostForm" placeholder="Description"></textarea></td></tr><tr><td><label class="lostLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerLostForm"></td></tr><tr><td><label class="lostLabel">Not sure where you lost it? Set an area in meters:</label></td><td><input type="text" class="markerLostForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitLostMarker" onclick="addPin(\'#e74c3c\')" value="Add marker"></td></tr></table></form>';
-var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="foundRule"><form><table><tr><td><label class="foundLabel">What have you found?</label></td><td><input type="text" id= "title" class="markerFoundForm" placeholder="Item"></td></tr><tr><td><label class="foundLabel"> Describe the item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerFoundForm" placeholder="Description"></textarea></td></tr><tr><td><label class="foundLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerFoundForm"></td></tr><tr><td><label class="foundLabel">Not sure where you found it? Set an area in meters:</label></td><td><input type="text" class="markerFoundForm" id="circleRadiusInput" placeholder="0"></td></tr><tr><td></td><td><input type="button" id="submitFoundMarker" onclick="addPin(\'#2980b9\')" value="Add marker"></td></tr></table></form>';
+var lostLightboxHTML = '<h1 class="lostHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="lostRule"><form name="markerForm"><table><tr><td><label class="lostLabel">What have you lost?</label></td><td><input type="text" id="title" class="markerLostForm" name="title" placeholder="Item"></td></tr><tr><td><label class="lostLabel"> Describe your item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerLostForm" placeholder="Description"></textarea></td></tr><tr><td><label class="lostLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerLostForm"></td></tr><tr><td><label class="lostLabel">Not sure where you lost it? Set a radius in meters:</label></td><td><input type="text" class="markerLostForm" id="circleRadiusInput" name="radius" placeholder="0"></td></tr><tr><td><label class="lostLabel" id="instructionsLost">You can drag the pin around the map. Press enter to submit when you have finished.</label></td><td><input type="button" id="submitLostMarker" onclick="addPin(\'#e74c3c\')" value="Add marker"></td></tr></table></form>';
+var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="foundRule"><form name="markerForm"><table><tr><td><label class="foundLabel">What have you found?</label></td><td><input type="text" id= "title" class="markerFoundForm" name="title" placeholder="Item"></td></tr><tr><td><label class="foundLabel"> Describe the item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerFoundForm" placeholder="Description"></textarea></td></tr><tr><td><label class="foundLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerFoundForm"></td></tr><tr><td><label class="foundLabel">Not sure where you found it? Set a radius in meters:</label></td><td><input type="text" class="markerFoundForm" id="circleRadiusInput" name="radius" placeholder="0"></td></tr><tr><td><label class="foundLabel" id="instructionsFound">You can drag the pin around the map. Press enter to submit when you have finished.</label></td><td><input type="button" id="submitFoundMarker" onclick="addPin(\'#2980b9\')" value="Add marker"></td></tr></table></form>';
 var filterAlertHTML = '<h3 class="filterAlert">Please choose a category from the dropdown menu</h3><input type="button" class="closeFilterAlert" onclick="removeLightbox(\'filterAlert\')" value="X">';
 var databaseAlertHTML = '<h3 class="databaseAlert">Unable to connect to reunitem database</h3>';
-var loginLightboxHTML = '<input type="button" class="closeLoginLightbox" onclick="removeLightbox(\'loginLightbox\')" value="X"><iframe src="loginForm.html"></iframe>';
-var videoHTML = '<input type="button" class="closeVideoLightbox" onclick="removeLightbox(\'videoLightbox\')" value="X">'
+var loginLightboxHTML = '<input type="button" class="closeLoginLightbox" onclick="removeLightbox(\'loginLightbox\')" value="X"><iframe class="loginiframe" src="loginForm.html"></iframe>';
+var videoHTML = '<input type="button" class="closeVideoLightbox" onclick="removeLightbox(\'videoLightbox\')" value="X"><iframe class="videoiframe" width="560" height="315" src="//www.youtube.com/embed/rIyeL36enwE?rel=0" frameborder="0" allowfullscreen></iframe>'
+var aboutHTML = '<h1 class="about">About reunitem.io</h1><input type="button" class="closeAboutLightbox" onclick="removeLightbox(\'aboutLightbox\')" value="X"><hr class="about"><p class="about">Reunitem is a project developed for Young Rewired State Festival of Code 2013 by Jacob Walker, Barnaby Taylor, James Brooks and George Stretten.<br><br>reunitem is an open-source project, so feel free to visit our github repos for <a href="https://github.com/jacobwwalker/caerus-web">web</a> and <a href="https://github.com/jacobwwalker/caerus-api">API</a>.<br><br>You can follow us on twitter <a href="https://twitter.com/ReunitemApp">@ReunitemApp</a>.</p>'
 //Function added to JQuery to horiontally center an element
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("left", ($(window).width() - $(this).outerWidth()) / 2);
     return this;
+}
+function validateForm()
+{
+    var x=document.forms["markerForm"]["title"].value;
+    if (x==null || x=="") {
+        alert("Please choose a title");
+        return false;
+    }
+    var x=document.forms["markerForm"]["radius"].value;
+    if (x == "") {
+        return;
+    }
+    else if ($.isNumeric(x) == false) {
+        alert("The radius must be a number");
+        return;
+    }
+}
+function submitLightbox() {
+    submitPinData(title,description,category,circleRadius,reported_as,latitude,longitude);
+    removeLightbox("submitLightbox");
 }
 function drawLightbox(lightboxID) {
     removeLightbox("loginLightbox");
@@ -59,7 +80,12 @@ function removeLightbox(lightboxID) {
     $("#" + greyoutID).remove();
 }
 //Adds a lightbox when video button is clicked to embed video
-$(video).click (function() {
+$("#video").click (function() {
     drawLightbox("videoLightbox");
     $(videoHTML).appendTo("#videoLightbox");
+});
+//Adds a lightbox when "about" is clicked
+$("#about").click (function() {
+    drawLightbox("aboutLightbox");
+    $(aboutHTML).appendTo("#aboutLightbox");
 });
