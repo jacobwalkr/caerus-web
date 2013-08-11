@@ -47,6 +47,7 @@ function drawLightbox(lightboxID) {
     $("#" + lightboxID).center();
     if (lightboxID == "loginLightbox") {
         $(loginLightboxHTML).appendTo("#loginLightbox");
+        $("#login").click(login);
     }
     else if (lightboxID == "databaseAlert") {
         $(databaseAlertHTML).appendTo("#databaseAlert");

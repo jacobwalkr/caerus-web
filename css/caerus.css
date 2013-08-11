@@ -726,9 +726,9 @@ table {
     -webkit-box-shadow: 0 2px 0 0 #703688;
 }
 
-#login:active, #signUp:active {
+#login:active {
     position:relative;
-    top:2px;
+    top:32px;
     border-radius: 5px;
     border-width: 0;
     background: #9b50ba;

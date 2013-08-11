@@ -35,17 +35,19 @@ function addPinFromDatabase(pinData) {
         center: window.marker.getPosition(),
         radius: pinData.radius
     });
+    google.maps.event.addListener(marker, "click", function () {
+        alert("Claim " + pinData.title);
+    });
 }
 function listMarkers() {
-    var pinData;
     $.ajax({
         dataType: "jsonp",
         mimeType: "application/javascript",
         url: "http://api.reunitem.io/items",
-        error: drawLightbox("databaseAlert"),
+//        error: drawLightbox("databaseAlert"),
         success: function(data) {
             var pinDataCount = data.length;
-            for (i = 0; i < pinDataCount; i++) {
+            for (var i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);
             }
         }
