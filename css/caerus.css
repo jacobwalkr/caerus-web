@@ -508,8 +508,8 @@ table {
 }
 
 .closeMarkerLightbox {
-    top: -102px;
-    left: 29px;
+    top: -68px;
+    left: 30px;
 }
 
 .closeMarkerLightbox:hover, .closeLoginLightbox:hover, .closeFilterAlert:hover, .closeVideoLightbox:hover, .closeAboutLightbox:hover {
