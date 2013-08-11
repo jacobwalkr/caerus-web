@@ -669,43 +669,56 @@ table {
 
 @media screen and (max-width:755px) {  
     #placeRedPinButton, #placeBluePinButton{ 
-        width: 100%;
+        width: 50%%;
         margin: 0;
         padding: 0;
         text-align: center;
+        float: left;
     }
 
     #top-bar {
         width: 100%;
-        height: 198px;
+        height: 98px;
     }
 
     #top-bar img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         float: none;
     }
 
     #buttonsMobile {
-        margin-top: 50px;
+        margin: 0;
+        width: 100%;
     }
 
     .buttonLogon {
-        margin-top: 52px;
-        float: none;
+        margin: 9px 0 0;
+        margin-right: -106px;
     }
 
     #rightNav {
         display: block;
-        margin-top: -105px;
-        width: 500px ;
-        margin-left: auto ;
-        margin-right: auto ;
+        position: absolute;
+        right: 114px;
+        top: 0;
+        width: auto;
     }
 
     #main, #map-canvas {
-        margin-top: 149px;
+        margin-top: 49px;
     }
 
+    .hi-icon-wrap {
+        margin: 0;
+        padding: 0;
+    }
+
+    #buttonsMobile:before,
+    #buttonsMobile:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    #buttonsMobile:after {
+        clear: both;
+    }
 }
