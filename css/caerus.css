@@ -590,11 +590,12 @@ table {
 
 .filterAlert {
     padding-bottom: 0px;
+    margin-top: 10px;
 }
 
 .closeFilterAlert {
     position: relative;
-    top: -87px;
+    top: -62px;
     left: 29px;
 }
 
@@ -650,11 +651,23 @@ table {
 .closeAboutLightbox {
     position: relative;
     right:-30px;
-    top:-101px;
+    top:-69px;
 }
 
 .about {
     color: #8e44ad;
+}
+
+#abouth1 {
+    color: rgba(142, 68, 173, 0.5);
+}
+
+#abouthr {
+    border-top-style:solid;
+    border-left-style:none;
+    border-right-style:none;
+    border-bottom-style:none;
+    color: rgba(142, 68, 173, 0.5);
 }
 
 #aboutLightbox {
@@ -767,6 +780,13 @@ table {
     #top-bar {
         width: 100%;
         height: 100px;
+    }
+
+    #dropdown {
+        position: absolute;
+        left: 20px;
+        margin: 0;
+        padding:0;
     }
 
     #top-bar img {
