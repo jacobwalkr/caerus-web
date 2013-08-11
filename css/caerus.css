@@ -669,7 +669,7 @@ table {
 
 @media screen and (max-width:755px) {  
     #placeRedPinButton, #placeBluePinButton{ 
-        width: 50%%;
+        width: 50%;
         margin: 0;
         padding: 0;
         text-align: center;
@@ -678,7 +678,7 @@ table {
 
     #top-bar {
         width: 100%;
-        height: 98px;
+        height: 100px;
     }
 
     #top-bar img {
@@ -686,7 +686,8 @@ table {
     }
 
     #buttonsMobile {
-        margin: 0;
+        top: 50px;
+        position: absolute;
         width: 100%;
     }
 
@@ -704,7 +705,7 @@ table {
     }
 
     #main, #map-canvas {
-        margin-top: 49px;
+        margin-top: 50px;
     }
 
     .hi-icon-wrap {
@@ -714,11 +715,13 @@ table {
 
     #buttonsMobile:before,
     #buttonsMobile:after {
-        content: " "; /* 1 */
-        display: table; /* 2 */
+        content: " "; 
+        display: table;
     }
 
     #buttonsMobile:after {
         clear: both;
     }
+
+
 }
