@@ -668,8 +668,44 @@ table {
 }
 
 @media screen and (max-width:755px) {  
-    #placeRedPinButton:after, #placeBluePinButton:after{ 
+    #placeRedPinButton, #placeBluePinButton{ 
         width: 100%;
+        margin: 0;
+        padding: 0;
         text-align: center;
     }
+
+    #top-bar {
+        width: 100%;
+        height: 198px;
+    }
+
+    #top-bar img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+    #buttonsMobile {
+        margin-top: 50px;
+    }
+
+    .buttonLogon {
+        margin-top: 52px;
+        float: none;
+    }
+
+    #rightNav {
+        display: block;
+        margin-top: -105px;
+        width: 500px ;
+        margin-left: auto ;
+        margin-right: auto ;
+    }
+
+    #main, #map-canvas {
+        margin-top: 149px;
+    }
+
 }
