@@ -16,7 +16,6 @@ function validateForm()
 {
     var x=document.forms["markerForm"]["title"].value;
     if (x==null || x=="") {
-        alert("Please choose a title");
         return false;
     }
     var x=document.forms["markerForm"]["radius"].value;

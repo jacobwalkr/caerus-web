@@ -753,3 +753,11 @@ table {
     padding-left: 14px;
     padding-right: 14px;
 }
+
+#loginSuccess {
+    
+}
+
+.successMessage {
+    color: rgba(142, 68, 173, 0.5);
+}
