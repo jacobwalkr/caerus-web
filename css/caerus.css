@@ -419,7 +419,7 @@ table {
 	display: inline-block;
 	font-size: 0px;
 	cursor: pointer;
-	margin: 15px 10px;
+	margin: 11px 10px;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -427,6 +427,7 @@ table {
 	position: relative;
 	z-index: 1;
 	color: #fff;
+    text-decoration: none;
 }
 
 .hi-icon:after {
@@ -468,7 +469,7 @@ table {
 }
 
 .icon-film:before {
-	content: "\e001";
+    content: "\e003";
 }
 
 .hi-icon-effect-6 .hi-icon {
@@ -589,11 +590,12 @@ table {
 
 .filterAlert {
     padding-bottom: 0px;
+    margin-top: 10px;
 }
 
 .closeFilterAlert {
     position: relative;
-    top: -87px;
+    top: -62px;
     left: 29px;
 }
 
@@ -649,11 +651,23 @@ table {
 .closeAboutLightbox {
     position: relative;
     right:-30px;
-    top:-101px;
+    top:-69px;
 }
 
 .about {
     color: #8e44ad;
+}
+
+#abouth1 {
+    color: rgba(142, 68, 173, 0.5);
+}
+
+#abouthr {
+    border-top-style:solid;
+    border-left-style:none;
+    border-right-style:none;
+    border-bottom-style:none;
+    color: rgba(142, 68, 173, 0.5);
 }
 
 #aboutLightbox {
@@ -754,10 +768,83 @@ table {
     padding-right: 14px;
 }
 
-#loginSuccess {
-    
-}
+@media screen and (max-width:755px) {  
+    #placeRedPinButton, #placeBluePinButton{ 
+        width: 50%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        float: left;
+    }
 
-.successMessage {
-    color: rgba(142, 68, 173, 0.5);
+    #top-bar {
+        width: 100%;
+        height: 100px;
+    }
+
+    .cd-dropdown {
+        position: absolute;
+        left: 50px;
+        top:140px;
+        margin: 0;
+        padding:0;
+    }
+
+    #aboutLightbox {
+        width:300px;
+        height:350px;
+        left:50px;
+        top:130px;
+    }
+
+    #loginLightbox {
+        left:50px;
+        top:130px;
+    }
+
+    #filterAlert {
+        left:50px;
+    }
+
+    #top-bar img {
+        float: none;
+    }
+
+    #buttonsMobile {
+        top: 50px;
+        position: absolute;
+        width: 100%;
+    }
+
+    .buttonLogon {
+        margin: 9px 0 0;
+        margin-right: -106px;
+    }
+
+    #rightNav {
+        display: block;
+        position: absolute;
+        right: 114px;
+        top: 0;
+        width: auto;
+    }
+
+    #main, #map-canvas {
+        margin-top: 50px;
+    }
+
+    .hi-icon-wrap {
+        margin: 0;
+        padding: 0;
+    }
+
+    #buttonsMobile:before,
+    #buttonsMobile:after {
+        content: " "; 
+        display: table;
+    }
+
+    #buttonsMobile:after {
+        clear: both;
+    }
 }
