@@ -11,7 +11,7 @@ function addPin(pinColour) {
         return;
     }
     var circleRadius = parseInt($("#circleRadiusInput").val());
-    if (circleRadius == "") {
+    if ($.isNumeric(circleRadius) == false) {
         circleRadius = 0;
     }
     if (pinColour === "#e74c3c") {
@@ -25,7 +25,7 @@ function addPin(pinColour) {
         scaledSize: new google.maps.Size(20,34.09,"px","px")
     };
     //Changes the address or postcode given to a Latlng
-    var title = $("#title").val()
+    var title = $("#title").val();
     var address = $("#address").val();
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( {"address": address}, function(results, status) {
@@ -52,7 +52,7 @@ function addPin(pinColour) {
         else if (status === "ZERO_RESULTS") {
             markerPos = map.getCenter();
             window.marker = new google.maps.Marker({
-                title: $("title").value,
+                title: title,
                 map: map,
                 position: markerPos,
                 draggable: true,
