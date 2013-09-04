@@ -31,13 +31,13 @@ html, body {
 }
 
 #enterPrompt {
-    color: rgba(1,1,1,0.5);
+    color: rgba(255,255,255,0.5);
     font-weight: normal;
     font-family: Arial;
     font-size: 20px;
     position: relative;
-    left: 500px;
-    top: 10px;
+    left: 560px;
+    top: 12px;
     display: none;
     width: 400px;
 }
@@ -81,13 +81,16 @@ html, body {
 }
 
 #placeBluePinButton {
-	padding:10px;
+	padding: 10px;
 	background: #2980b9;
 	margin-left: -4px;
 }
 
+div {
+    display: inline;
+}
+
 #placeRedPinButton,#placeBluePinButton {
-	position: relative;
 	display: inline-block;
 	height: 50px;
 	z-index: 1010;
@@ -98,6 +101,7 @@ html, body {
 	letter-spacing: 1px;
 	outline: none;
 	font-family: 'Lato';
+    width: 195px;
 }
 
 #placeRedPinButton:hover, #placeBluePinButton:hover, #logoButton:hover {

@@ -57,7 +57,15 @@ function addPin(pinColour) {
             var description = $("#description").val();
             var category = new Array("Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other").indexOf(selectedCategory);
             removeLightbox("markerLightbox");
-//            $("#enterPrompt").css("display", "block");
+            $("#enterPrompt").css("display", "inline");
+            $("#placeBluePinButton").css("position", "absolute");
+            $("#placeRedPinButton").css("position", "absolute");
+            $("#placeBluePinButton").css("top", "0");
+            $("#placeRedPinButton").css("top", "0");
+            $("#placeRedPinButton").css("left", "166px");
+            $("#placeBluePinButton").css("left", "374px");
+            $("#rightNavButtons").css("position", "relative");
+            $("#rightNavButtons").css("top", "25px");
             $(document).keypress(function (key) {
                 if (key.which == 13) {
                     var markerPos = newMarker.getPosition();
@@ -67,6 +75,11 @@ function addPin(pinColour) {
                     drawLightbox("markerAdded");
                     newMarker.setDraggable(false);
                     $("#enterPrompt").css("display", "none");
+                    $("#placeBluePinButton").css("position", "relative");
+                    $("#placeRedPinButton").css("position", "relative");
+                    $("#placeRedPinButton").css("left", "0");
+                    $("#placeBluePinButton").css("left", "0");
+                    $("#rightNavButtons").css("top", "0");
                 }
             });
         }
@@ -96,7 +109,15 @@ function addPin(pinColour) {
             var description = $("#description").val();
             var category = new Array("Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other").indexOf(selectedCategory);
             removeLightbox("markerLightbox");
-//            $("#enterPrompt").css("display", "block");
+            $("#enterPrompt").css("display", "inline");
+            $("#placeBluePinButton").css("position", "absolute");
+            $("#placeRedPinButton").css("position", "absolute");
+            $("#placeBluePinButton").css("top", "0");
+            $("#placeRedPinButton").css("top", "0");
+            $("#placeRedPinButton").css("left", "166px");
+            $("#placeBluePinButton").css("left", "374px");
+            $("#rightNavButtons").css("position", "relative");
+            $("#rightNavButtons").css("top", "25px");
             $(document).keypress(function (key) {
                 if (key.which == 13) {
                     var markerPos = newMarker.getPosition();
@@ -106,6 +127,11 @@ function addPin(pinColour) {
                     drawLightbox("markerAdded");
                     newMarker.setDraggable(false);
                     $("#enterPrompt").css("display", "none");
+                    $("#placeBluePinButton").css("position", "relative");
+                    $("#placeRedPinButton").css("position", "relative");
+                    $("#placeRedPinButton").css("left", "0");
+                    $("#placeBluePinButton").css("left", "0");
+                    $("#rightNavButtons").css("top", "0");
                 }
             });
         }
