@@ -19,7 +19,6 @@ function addPinFromDatabase(pinData) {
         scaledSize: new google.maps.Size(20,34.09,"px","px")
     };
     var markerPos = new google.maps.LatLng(pinData.latitude,pinData.longitude);
-    map.setCenter(markerPos);
     window.marker = new google.maps.Marker({
         title: pinData.title,
         map: map,

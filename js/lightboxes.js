@@ -62,6 +62,8 @@ function drawLightbox(lightboxID) {
     }
     else if (lightboxID == "markerAdded") {
         $(markerAddedHTML).appendTo("#markerAdded");
+        $(markerAdded).css("left", "400px");
+        $(markerAdded).css("top", "100px");
     }
 }
 function addMarkerLightboxContent(pinHex) {
