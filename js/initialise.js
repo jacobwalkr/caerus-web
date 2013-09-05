@@ -43,7 +43,7 @@ function listMarkers() {
         dataType: "jsonp",
         mimeType: "application/javascript",
         url: "http://api.reunitem.io/items",
-//        error: drawLightbox("databaseAlert"),
+        error: drawLightbox("databaseAlert"),
         success: function(data) {
             var pinDataCount = data.length;
             for (var i = 0; i < pinDataCount; i++) {
