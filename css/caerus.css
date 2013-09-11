@@ -260,11 +260,11 @@ body {
     box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+    top: 100px;
 }
 
 #markerLightbox {
     position: absolute;
-    top: 100px;
     width: 500px;
     height: auto;
 }
@@ -740,7 +740,7 @@ table {
     margin-left: 33px;
 }
 
-#login {
+#login, .claim {
     font-size: 18px;
     width: 200px;
     padding-top: 2px;
@@ -756,9 +756,9 @@ table {
     -webkit-box-shadow: 0 2px 0 0 #703688;
 }
 
-#login:active, #signUp:active {
-    position:relative;
-    top:2px;
+#login:active, .claim:active {
+    position: relative;
+    top: 32px;
     border-radius: 5px;
     border-width: 0;
     background: #9b50ba;
@@ -766,6 +766,16 @@ table {
     box-shadow: 0 0 0 0;
     -moz-box-shadow: 0 0 0 0;
     -webkit-box-shadow: 0 0 0 0;
+}
+
+.claim {
+    position: relative;
+    top: 13px;
+}
+
+.claim:active {
+    position: relative;
+    top: 15px;
 }
 
 .textInputFields {

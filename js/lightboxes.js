@@ -6,6 +6,8 @@ var markerAddedHTML = '<h3 class="filterAlert">Your item has been added to the d
 var databaseAlertHTML = '<h3 class="databaseAlert">Unable to connect to reunitem database</h3>';
 var loginLightboxHTML = '<input type="button" class="closeLoginLightbox" onclick="removeLightbox(\'loginLightbox\')" value="X"><div class="loginForm"><h1 class="loginh1">Enter your details</h1><hr class="loginhr"><form><input type="text" class="textInputFields logininput" id="email" placeholder="Email address"><br><input type="password" class="textInputFields logininput" id="password" placeholder="Password"><br><input type="button" id="login" class="logininput" value="Login"><br><p class="instructionsLogin">If you do not have an account one will be created for you.</p></form></div>';
 var videoHTML = '<input type="button" class="closeVideoLightbox" onclick="removeLightbox(\'videoLightbox\')" value="X"><iframe class="videoiframe" width="560" height="315" src="http://www.youtube.com/embed/rIyeL36enwE?rel=0" frameborder="0" allowfullscreen></iframe>'
+var claimHTML = '<h3 class="filterAlert"><input type="button" class="claim" onclick="claimItem(marker)", value="Click to claim this item!"></h3><input type="button" class="closeFilterAlert" onclick="removeLightbox(\'claimLightbox\')" value="X">';
+var beenClaimedHTML = '<h3 class="filterAlert">We\'ve notified the submitter that you wish to claim this item. Please wait to hear from them.</h3><input type="button" class="closeFilterAlert" onclick="removeLightbox(\'beenClaimedLightbox\')" value="X">';
 var aboutHTML = '<h1 class="about">About reunitem.io</h1><input type="button" class="closeAboutLightbox" onclick="removeLightbox(\'aboutLightbox\')" value="X"><hr class="about"><p class="about">Reunitem is a project developed for Young Rewired State Festival of Code 2013 by Jacob Walker, Barnaby Taylor, Adam Barcock, James Brooks and George Streten.<br><br>reunitem is an open-source project, so feel free to visit our github repos for <a href="https://github.com/jacobwwalker/caerus-web">web</a> and <a href="https://github.com/jacobwwalker/caerus-api">API</a>.<br><br>You can also follow us on twitter - <a href="https://twitter.com/ReunitemApp">@ReunitemApp</a>.</p>'
 //Function added to JQuery to horiontally center an element
 jQuery.fn.center = function () {
@@ -39,6 +41,8 @@ function drawLightbox(lightboxID) {
     removeLightbox("filterAlert");
     removeLightbox("aboutLightbox");
     removeLightbox("videoLightbox");
+    removeLightbox("claimLightbox");
+    removeLightbox("beenClaimedLightbox");
     $("<div/>", {
         id: lightboxID + "Greyout",
         class: "lightboxGreyout"
@@ -47,24 +51,26 @@ function drawLightbox(lightboxID) {
         id: lightboxID,
         class: "lightbox"
     }).prependTo("body");
-    $("#" + lightboxID).center();
     if (lightboxID == "loginLightbox") {
         $(loginLightboxHTML).appendTo("#loginLightbox");
         $("#login").click(login);
     }
     else if (lightboxID == "databaseAlert") {
         $(databaseAlertHTML).appendTo("#databaseAlert");
-        $(databaseAlert).css("left", "400px");
     }
     else if (lightboxID == "filterAlert") {
         $(filterAlertHTML).appendTo("#filterAlert");
-        $(filterAlert).css("left", "400px");
     }
     else if (lightboxID == "markerAdded") {
         $(markerAddedHTML).appendTo("#markerAdded");
-        $(markerAdded).css("left", "400px");
-        $(markerAdded).css("top", "100px");
     }
+    else if (lightboxID == "claimLightbox") {
+        $(claimHTML).appendTo("#claimLightbox");
+    }
+    else if (lightboxID == "beenClaimedLightbox") {
+        $(beenClaimedHTML).appendTo("#beenClaimedLightbox");
+    }
+    $("#" + lightboxID).center();
 }
 function addMarkerLightboxContent(pinHex) {
     if (pinHex === "#e74c3c") {

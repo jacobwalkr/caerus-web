@@ -4,3 +4,7 @@ function submitPinData(title,description,category,circleRadius,reported_as,latit
         '{"title":"'+title+'","description":"'+description+'","reporter":0,"category":'+category+',"reported_as":"'+reported_as+'","latitude":'+latitude+',"longitude":'+longitude+',"radius":'+circleRadius+'}'
     );
 }
+function claimItem(marker) {
+    //Add code to claim
+    drawLightbox("beenClaimedLightbox");
+}
