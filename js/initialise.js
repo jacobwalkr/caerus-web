@@ -21,13 +21,13 @@ function addPinFromDatabase(pinData) {
     var markerPos = new google.maps.LatLng(pinData.latitude,pinData.longitude);
     window.marker = new google.maps.Marker({
         title: pinData.title,
-        map: map,
+        map: window.map,
         position: markerPos,
         draggable: false,
         icon: pin
     });
     circle = new google.maps.Circle({
-        map: map,
+        map: window.map,
         fillColor: pinColour,
         fillOpacity: 0.5,
         strokeColor: pinColour,
@@ -48,9 +48,62 @@ function listMarkers() {
         url: "http://api.reunitem.io/items",
 //        error: drawLightbox("databaseAlert"),
         success: function(data) {
-            var pinDataCount = data.length;
+            window.pinDataCount = data.length;
             for (var i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);
+            }
+        }
+    });
+}
+function updateMarkers() {
+    console.log("Function initialised");
+    //Clear all markers from the map
+    for (var i = 0; i < window.pinDataCount; i++) {
+        marker.setMap(null);
+    }
+    //Add markers only from selected category
+    $.ajax({
+        dataType: "jsonp",
+        mimeType: "application/javascript",
+        url: "http://api.reunitem.io/items",
+//        error: drawLightbox("databaseAlert"),
+        success: function(data) {
+            window.pinDataCount = data.length;
+            for (var i = 0; i < pinDataCount; i++) {
+                var selectedCategory = $("div.cd-dropdown span").first().text();
+                if (selectedCategory == "Filter") {
+                    addPinFromDatabase(data[i]);
+                }
+                else if (selectedCategory == "Clothing") {
+                    if (data[i].category == 1) {
+                        addPinFromDatabase(data[i]);
+                    }
+                }
+                else if (selectedCategory == "Computers") {
+                    if (data[i].category == 2) {
+                        addPinFromDatabase(data[i]);
+                    }
+                }
+                else if (selectedCategory == "Keys") {
+                    if (data[i].category == 3) {
+                        addPinFromDatabase(data[i]);
+                    }
+                }
+                else if (selectedCategory == "Mobile Devices") {
+                    if (data[i].category == 4) {
+                        addPinFromDatabase(data[i]);
+                    }
+                }
+                else if (selectedCategory == "Wallets and Purses") {
+                    if (data[i].category == 5) {
+                        addPinFromDatabase(data[i]);
+                    }
+                }
+                else if (selectedCategory == "Other") {
+                    if (data[i].category == 6) {
+                        addPinFromDatabase(data[i]);
+                    }
+                }
             }
         }
     });
@@ -61,7 +114,8 @@ function initialise() {
         zoom: 6,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    window.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     listMarkers();
 }
 google.maps.event.addDomListener(window, "load", initialise);
+$("div.cd-dropdown span").first().click(updateMarkers());
