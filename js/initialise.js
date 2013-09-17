@@ -1,3 +1,5 @@
+var markersArray = [];
+var circlesArray = [];
 //Adds single pin at a time. The function listMarkers calls more than once in order to add all pins
 function addPinFromDatabase(pinData) {
     var customIcon;
@@ -40,6 +42,8 @@ function addPinFromDatabase(pinData) {
             drawLightbox("claimLightbox");
         } 
     });
+    markersArray.push(marker);
+    circlesArray.push(circle);
 }
 function listMarkers() {
     $.ajax({
@@ -55,12 +59,36 @@ function listMarkers() {
         }
     });
 }
-function updateMarkers() {
-    console.log("Function initialised");
-    //Clear all markers from the map
-    for (var i = 0; i < window.pinDataCount; i++) {
-        marker.setMap(null);
+
+function clearMarkers() {
+    if (markersArray) {
+        for (i in markersArray) {
+        markersArray[i].setMap(null);
+        }
     }
+    if (markersArray) {
+        for (i in markersArray) {
+            markersArray[i].setMap(null);
+        }
+        markersArray.length = 0;
+    }
+    if (circlesArray) {
+        for (i in circlesArray) {
+        circlesArray[i].setMap(null);
+        }
+    }
+    if (circlesArray) {
+        for (i in circlesArray) {
+            circlesArray[i].setMap(null);
+        }
+        circlesArray.length = 0;
+    }
+};
+
+function updateMarkers() {
+    console.log("function initialised");
+    //Clear all markers from the map
+    clearMarkers();
     //Add markers only from selected category
     $.ajax({
         dataType: "jsonp",
@@ -118,4 +146,6 @@ function initialise() {
     listMarkers();
 }
 google.maps.event.addDomListener(window, "load", initialise);
-$("div.cd-dropdown span").first().click(updateMarkers());
+$(window).click(function() {
+    updateMarkers();
+});
