@@ -1,49 +1,146 @@
 var markersArray = [];
 var circlesArray = [];
+var circleDrawn = false;
 //Adds single pin at a time. The function listMarkers calls more than once in order to add all pins
 function addPinFromDatabase(pinData) {
-    var customIcon;
-    var categories = ["Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other"];
-    if (pinData.reported_as == "lost") {
-        pinColour = "#e74c3c";
+    if (map.getZoom() > 8) {
+        var customIcon;
+        var categories = ["Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other"];
+        if (pinData.reported_as == "lost") {
+            pinColour = "#e74c3c";
+        }
+        else if (pinData.reported_as == "found") {
+            pinColour = "#2980b9";
+        }
+        if (pinColour == "#e74c3c") {
+            customIcon = redCategories[categories[pinData.category]];
+        }
+        else if (pinColour == "#2980b9") {
+            customIcon = blueCategories[categories[pinData.category]];
+        }
+        var pin = {
+            url: customIcon,
+            scaledSize: new google.maps.Size(20,34.09,"px","px")
+        };
+        var markerPos = new google.maps.LatLng(pinData.latitude,pinData.longitude);
+        window.marker = new google.maps.Marker({
+            title: pinData.title,
+            map: window.map,
+            position: markerPos,
+            draggable: false,
+            icon: pin
+        });
+        circle = new google.maps.Circle({
+            map: window.map,
+            fillColor: pinColour,
+            fillOpacity: 0.5,
+            strokeColor: pinColour,
+            center: window.marker.getPosition(),
+            radius: pinData.radius
+        });
+        google.maps.event.addListener(marker, "click", function () {
+            var bOrR = marker.icon.url.charAt(4)
+            if (bOrR == "b") {
+                drawLightbox("claimLightbox");
+            } 
+        });
+        markersArray.push(marker);
+        circlesArray.push(circle);
     }
-    else if (pinData.reported_as == "found") {
-        pinColour = "#2980b9";
+    else if (map.getZoom() <= 8) {
+        var customIcon;
+        var categories = ["Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other"];
+        if (pinData.reported_as == "lost") {
+            pinColour = "#e74c3c";
+        }
+        else if (pinData.reported_as == "found") {
+            pinColour = "#2980b9";
+        }
+        if (pinColour == "#e74c3c") {
+            customIcon = redCategories[categories[pinData.category]];
+        }
+        else if (pinColour == "#2980b9") {
+            customIcon = blueCategories[categories[pinData.category]];
+        }
+        var pin = {
+            url: customIcon,
+            scaledSize: new google.maps.Size(20,34.09,"px","px")
+        };
+        var markerPos = new google.maps.LatLng(pinData.latitude,pinData.longitude);
+        window.marker = new google.maps.Marker({
+            title: pinData.title,
+            map: window.map,
+            position: markerPos,
+            draggable: false,
+            icon: pin,
+            visible: false
+        });
+        circle = new google.maps.Circle({
+            map: window.map,
+            fillColor: pinColour,
+            fillOpacity: 0.5,
+            strokeColor: pinColour,
+            center: window.marker.getPosition(),
+            radius: pinData.radius,
+            visible: false
+        });
+        google.maps.event.addListener(marker, "click", function () {
+            var bOrR = marker.icon.url.charAt(4)
+            if (bOrR == "b") {
+                drawLightbox("claimLightbox");
+            } 
+        });
+        markersArray.push(marker);
+        circlesArray.push(circle);
+        if (circleDrawn === false) {
+            circle = new google.maps.Circle({
+                map: window.map,
+                fillColor: "#8e44ad",
+                fillOpacity: 0.5,
+                strokeColor: "#8e44ad",
+                center: new google.maps.LatLng(57, -4),
+                radius: 140000
+            });
+            circlesArray.push(circle);
+            circle = new google.maps.Circle({
+                map: window.map,
+                fillColor: "#8e44ad",
+                fillOpacity: 0.5,
+                strokeColor: "#8e44ad",
+                center: new google.maps.LatLng(54.5, -2.2),
+                radius: 140000
+            });
+            circlesArray.push(circle);
+            circle = new google.maps.Circle({
+                map: window.map,
+                fillColor: "#8e44ad",
+                fillOpacity: 0.5,
+                strokeColor: "#8e44ad",
+                center: new google.maps.LatLng(52, 0),
+                radius: 140000
+            });
+            circlesArray.push(circle);
+            circle = new google.maps.Circle({
+                map: window.map,
+                fillColor: "#8e44ad",
+                fillOpacity: 0.5,
+                strokeColor: "#8e44ad",
+                center: new google.maps.LatLng(52.2, -4.3),
+                radius: 140000
+            });
+            circlesArray.push(circle);
+            circle = new google.maps.Circle({
+                map: window.map,
+                fillColor: "#8e44ad",
+                fillOpacity: 0.5,
+                strokeColor: "#8e44ad",
+                center: new google.maps.LatLng(54, -8),
+                radius: 140000
+            });
+            circlesArray.push(circle);
+            circleDrawn = true;
+        }
     }
-    if (pinColour == "#e74c3c") {
-        customIcon = redCategories[categories[pinData.category]];
-    }
-    else if (pinColour == "#2980b9") {
-        customIcon = blueCategories[categories[pinData.category]];
-    }
-    var pin = {
-        url: customIcon,
-        scaledSize: new google.maps.Size(20,34.09,"px","px")
-    };
-    var markerPos = new google.maps.LatLng(pinData.latitude,pinData.longitude);
-    window.marker = new google.maps.Marker({
-        title: pinData.title,
-        map: window.map,
-        position: markerPos,
-        draggable: false,
-        icon: pin
-    });
-    circle = new google.maps.Circle({
-        map: window.map,
-        fillColor: pinColour,
-        fillOpacity: 0.5,
-        strokeColor: pinColour,
-        center: window.marker.getPosition(),
-        radius: pinData.radius
-    });
-    google.maps.event.addListener(marker, "click", function () {
-        var bOrR = marker.icon.url.charAt(4)
-        if (bOrR == "b") {
-            drawLightbox("claimLightbox");
-        } 
-    });
-    markersArray.push(marker);
-    circlesArray.push(circle);
 }
 function listMarkers() {
     $.ajax({
@@ -86,9 +183,9 @@ function clearMarkers() {
 };
 
 function updateMarkers() {
-    //Clear all markers from the map
     clearMarkers();
     //Add markers only from selected category
+    circleDrawn = false;
     $.ajax({
         dataType: "jsonp",
         mimeType: "application/javascript",
@@ -143,6 +240,9 @@ function initialise() {
     };
     window.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     listMarkers();
+    google.maps.event.addListener(window.map, 'zoom_changed', function() {
+        updateMarkers();
+    });
 }
 google.maps.event.addDomListener(window, "load", initialise);
 $(window).click(function() {
