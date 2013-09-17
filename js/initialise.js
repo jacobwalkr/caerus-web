@@ -1,6 +1,11 @@
 var markersArray = [];
 var circlesArray = [];
 var circleDrawn = false;
+var circle1Num;
+var circle2Num;
+var circle3Num;
+var circle4Num ;
+var circle5Num;
 //Adds single pin at a time. The function listMarkers calls more than once in order to add all pins
 function addPinFromDatabase(pinData) {
     if (map.getZoom() > 8) {
@@ -93,7 +98,7 @@ function addPinFromDatabase(pinData) {
         markersArray.push(marker);
         circlesArray.push(circle);
         if (circleDrawn === false) {
-            circle = new google.maps.Circle({
+            circle1 = new google.maps.Circle({
                 map: window.map,
                 fillColor: "#8e44ad",
                 fillOpacity: 0.5,
@@ -102,7 +107,7 @@ function addPinFromDatabase(pinData) {
                 radius: 140000
             });
             circlesArray.push(circle);
-            circle = new google.maps.Circle({
+            circle2 = new google.maps.Circle({
                 map: window.map,
                 fillColor: "#8e44ad",
                 fillOpacity: 0.5,
@@ -111,7 +116,7 @@ function addPinFromDatabase(pinData) {
                 radius: 140000
             });
             circlesArray.push(circle);
-            circle = new google.maps.Circle({
+            circle3 = new google.maps.Circle({
                 map: window.map,
                 fillColor: "#8e44ad",
                 fillOpacity: 0.5,
@@ -120,7 +125,7 @@ function addPinFromDatabase(pinData) {
                 radius: 140000
             });
             circlesArray.push(circle);
-            circle = new google.maps.Circle({
+            circle4 = new google.maps.Circle({
                 map: window.map,
                 fillColor: "#8e44ad",
                 fillOpacity: 0.5,
@@ -129,7 +134,7 @@ function addPinFromDatabase(pinData) {
                 radius: 140000
             });
             circlesArray.push(circle);
-            circle = new google.maps.Circle({
+            circle5 = new google.maps.Circle({
                 map: window.map,
                 fillColor: "#8e44ad",
                 fillOpacity: 0.5,
@@ -140,9 +145,29 @@ function addPinFromDatabase(pinData) {
             circlesArray.push(circle);
             circleDrawn = true;
         }
+        if (circle1.getBounds().contains(marker.getPosition())) {
+            circle1Num++
+        }
+        else if (circle2.getBounds().contains(marker.getPosition())) {
+            circle2Num++
+        }
+        else if (circle3.getBounds().contains(marker.getPosition())) {
+            circle3Num++
+        }
+        else if (circle4.getBounds().contains(marker.getPosition())) {
+            circle4Num++
+        }
+        else if (circle5.getBounds().contains(marker.getPosition())) {
+            circle5Num++
+        }
     }
 }
 function listMarkers() {
+    circle1Num = 0;
+    circle2Num = 0;
+    circle3Num = 0;
+    circle4Num = 0;
+    circle5Num = 0;
     $.ajax({
         dataType: "jsonp",
         mimeType: "application/javascript",
@@ -152,6 +177,43 @@ function listMarkers() {
             window.pinDataCount = data.length;
             for (var i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);
+            }
+            var circle1Content = circle1Num + " markers";
+            var circle2Content = circle2Num + " markers";
+            var circle3Content = circle3Num + " markers";
+            var circle4Content = circle4Num + " markers";
+            var circle5Content = circle5Num + " markers";
+            if (map.getZoom() <= 8) {
+                infoWindow1 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(57, -4),
+                    content: circle1Content,
+                    disableAutoPan: true
+                });
+                infoWindow2 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(54.5, -2.2),
+                    content: circle2Content,
+                    disableAutoPan: true
+                });
+                infoWindow3 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(52, 0),
+                    content: circle3Content,
+                    disableAutoPan: true
+                });
+                infoWindow4 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(52.2, -4.3),
+                    content: circle4Content,
+                    disableAutoPan: true
+                });
+                infoWindow5 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(54, -8),
+                    content: circle5Content,
+                    disableAutoPan: true
+                });
+                infoWindow1.open(map);
+                infoWindow2.open(map);
+                infoWindow3.open(map);
+                infoWindow4.open(map);
+                infoWindow5.open(map);
             }
         }
     });
@@ -180,12 +242,27 @@ function clearMarkers() {
         }
         circlesArray.length = 0;
     }
+    circle1.setMap(null);
+    circle2.setMap(null);
+    circle3.setMap(null);
+    circle4.setMap(null);
+    circle5.setMap(null);
+    circleDrawn = false;
+    infoWindow1.close();
+    infoWindow2.close();
+    infoWindow3.close();
+    infoWindow4.close();
+    infoWindow5.close();
 };
 
 function updateMarkers() {
+    circle1Num = 0;
+    circle2Num = 0;
+    circle3Num = 0;
+    circle4Num = 0;
+    circle5Num = 0;
     clearMarkers();
     //Add markers only from selected category
-    circleDrawn = false;
     $.ajax({
         dataType: "jsonp",
         mimeType: "application/javascript",
@@ -228,6 +305,43 @@ function updateMarkers() {
                         addPinFromDatabase(data[i]);
                     }
                 }
+            }
+            circle1Content = circle1Num + " markers";
+            circle2Content = circle2Num + " markers";
+            circle3Content = circle3Num + " markers";
+            circle4Content = circle4Num + " markers";
+            circle5Content = circle5Num + " markers";
+            if (map.getZoom() <= 8) {
+                infoWindow1 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(57, -4),
+                    content: circle1Content,
+                    disableAutoPan: true
+                });
+                infoWindow2 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(54.5, -2.2),
+                    content: circle2Content,
+                    disableAutoPan: true
+                });
+                infoWindow3 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(52, 0),
+                    content: circle3Content,
+                    disableAutoPan: true
+                });
+                infoWindow4 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(52.2, -4.3),
+                    content: circle4Content,
+                    disableAutoPan: true
+                });
+                infoWindow5 = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(54, -8),
+                    content: circle5Content,
+                    disableAutoPan: true
+                });
+                infoWindow1.open(map);
+                infoWindow2.open(map);
+                infoWindow3.open(map);
+                infoWindow4.open(map);
+                infoWindow5.open(map);
             }
         }
     });
