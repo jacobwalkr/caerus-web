@@ -86,7 +86,6 @@ function clearMarkers() {
 };
 
 function updateMarkers() {
-    console.log("function initialised");
     //Clear all markers from the map
     clearMarkers();
     //Add markers only from selected category
