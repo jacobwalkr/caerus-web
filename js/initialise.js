@@ -184,31 +184,11 @@ function listMarkers() {
             var circle4Content = circle4Num + " markers";
             var circle5Content = circle5Num + " markers";
             if (map.getZoom() <= 8) {
-                infoWindow1 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(57, -4),
-                    content: circle1Content,
-                    disableAutoPan: true
-                });
-                infoWindow2 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(54.5, -2.2),
-                    content: circle2Content,
-                    disableAutoPan: true
-                });
-                infoWindow3 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(52, 0),
-                    content: circle3Content,
-                    disableAutoPan: true
-                });
-                infoWindow4 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(52.2, -4.3),
-                    content: circle4Content,
-                    disableAutoPan: true
-                });
-                infoWindow5 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(54, -8),
-                    content: circle5Content,
-                    disableAutoPan: true
-                });
+                infoWindow1.setContent(circle1Content);
+                infoWindow2.setContent(circle2Content);
+                infoWindow3.setContent(circle3Content);
+                infoWindow4.setContent(circle4Content);
+                infoWindow5.setContent(circle5Content);
                 infoWindow1.open(map);
                 infoWindow2.open(map);
                 infoWindow3.open(map);
@@ -312,31 +292,11 @@ function updateMarkers() {
             circle4Content = circle4Num + " markers";
             circle5Content = circle5Num + " markers";
             if (map.getZoom() <= 8) {
-                infoWindow1 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(57, -4),
-                    content: circle1Content,
-                    disableAutoPan: true
-                });
-                infoWindow2 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(54.5, -2.2),
-                    content: circle2Content,
-                    disableAutoPan: true
-                });
-                infoWindow3 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(52, 0),
-                    content: circle3Content,
-                    disableAutoPan: true
-                });
-                infoWindow4 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(52.2, -4.3),
-                    content: circle4Content,
-                    disableAutoPan: true
-                });
-                infoWindow5 = new google.maps.InfoWindow({
-                    position: new google.maps.LatLng(54, -8),
-                    content: circle5Content,
-                    disableAutoPan: true
-                });
+                infoWindow1.setContent(circle1Content);
+                infoWindow2.setContent(circle2Content);
+                infoWindow3.setContent(circle3Content);
+                infoWindow4.setContent(circle4Content);
+                infoWindow5.setContent(circle5Content);
                 infoWindow1.open(map);
                 infoWindow2.open(map);
                 infoWindow3.open(map);
@@ -346,6 +306,26 @@ function updateMarkers() {
         }
     });
 }
+infoWindow1 = new google.maps.InfoWindow({
+    position: new google.maps.LatLng(57, -4),
+    disableAutoPan: true
+});
+infoWindow2 = new google.maps.InfoWindow({
+    position: new google.maps.LatLng(54.5, -2.2),
+    disableAutoPan: true
+});
+infoWindow3 = new google.maps.InfoWindow({
+    position: new google.maps.LatLng(52, 0),
+    disableAutoPan: true
+});
+infoWindow4 = new google.maps.InfoWindow({
+    position: new google.maps.LatLng(52.2, -4.3),
+    disableAutoPan: true
+});
+infoWindow5 = new google.maps.InfoWindow({
+    position: new google.maps.LatLng(54, -8),
+    disableAutoPan: true
+});
 function initialise() {
     var mapOptions = {
         center: new google.maps.LatLng(54, -2),
