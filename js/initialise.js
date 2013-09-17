@@ -178,11 +178,11 @@ function listMarkers() {
             for (var i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);
             }
-            var circle1Content = circle1Num + " markers";
-            var circle2Content = circle2Num + " markers";
-            var circle3Content = circle3Num + " markers";
-            var circle4Content = circle4Num + " markers";
-            var circle5Content = circle5Num + " markers";
+            var circle1Content = "<div height='auto' width='auto'>" + circle1Num + " markers" + "</div>";
+            var circle2Content = "<div height='auto' width='auto'>" + circle2Num + " markers" + "</div>";
+            var circle3Content = "<div height='auto' width='auto'>" + circle3Num + " markers" + "</div>";
+            var circle4Content = "<div height='auto' width='auto'>" + circle4Num + " markers" + "</div>";
+            var circle5Content = "<div height='auto' width='auto'>" + circle5Num + " markers" + "</div>";
             if (map.getZoom() <= 8) {
                 infoWindow1.setContent(circle1Content);
                 infoWindow2.setContent(circle2Content);
@@ -286,11 +286,11 @@ function updateMarkers() {
                     }
                 }
             }
-            circle1Content = circle1Num + " markers";
-            circle2Content = circle2Num + " markers";
-            circle3Content = circle3Num + " markers";
-            circle4Content = circle4Num + " markers";
-            circle5Content = circle5Num + " markers";
+            circle1Content = "<div height='auto' width='auto'>" + circle1Num + " markers" + "</div>";
+            circle2Content = "<div height='auto' width='auto'>" + circle2Num + " markers" + "</div>";
+            circle3Content = "<div height='auto' width='auto'>" + circle3Num + " markers" + "</div>";
+            circle4Content = "<div height='auto' width='auto'>" + circle4Num + " markers" + "</div>";
+            circle5Content = "<div height='auto' width='auto'>" + circle5Num + " markers" + "</div>";
             if (map.getZoom() <= 8) {
                 infoWindow1.setContent(circle1Content);
                 infoWindow2.setContent(circle2Content);
