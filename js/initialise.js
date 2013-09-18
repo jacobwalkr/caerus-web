@@ -1,14 +1,28 @@
 var markersArray = [];
 var circlesArray = [];
-var circleDrawn = false;
-var circle1Num;
-var circle2Num;
-var circle3Num;
-var circle4Num ;
-var circle5Num;
+var mcStyles = [
+    {
+        opt_textColor: 'white',
+        url: 'img/markercluster.png',
+        height: 48,
+        width: 50
+    },
+    {
+        opt_textColor: 'white',
+        url: 'img/markercluster.png',
+        height: 48,
+        width: 50
+    },
+    {
+        opt_textColor: 'white',
+        url: 'img/markercluster.png',
+        height: 48,
+        width: 50
+    },
+];
+var mcOptions = {gridSize: 100, styles: mcStyles, maxZoom: 15};
 //Adds single pin at a time. The function listMarkers calls more than once in order to add all pins
 function addPinFromDatabase(pinData) {
-    if (map.getZoom() > 8) {
         var customIcon;
         var categories = ["Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other"];
         if (pinData.reported_as == "lost") {
@@ -51,123 +65,8 @@ function addPinFromDatabase(pinData) {
         });
         markersArray.push(marker);
         circlesArray.push(circle);
-    }
-    else if (map.getZoom() <= 8) {
-        var customIcon;
-        var categories = ["Filter","Clothing","Computers","Keys","Mobile Devices","Wallets and Purses","Other"];
-        if (pinData.reported_as == "lost") {
-            pinColour = "#e74c3c";
-        }
-        else if (pinData.reported_as == "found") {
-            pinColour = "#2980b9";
-        }
-        if (pinColour == "#e74c3c") {
-            customIcon = redCategories[categories[pinData.category]];
-        }
-        else if (pinColour == "#2980b9") {
-            customIcon = blueCategories[categories[pinData.category]];
-        }
-        var pin = {
-            url: customIcon,
-            scaledSize: new google.maps.Size(20,34.09,"px","px")
-        };
-        var markerPos = new google.maps.LatLng(pinData.latitude,pinData.longitude);
-        window.marker = new google.maps.Marker({
-            title: pinData.title,
-            map: window.map,
-            position: markerPos,
-            draggable: false,
-            icon: pin,
-            visible: false
-        });
-        circle = new google.maps.Circle({
-            map: window.map,
-            fillColor: pinColour,
-            fillOpacity: 0.5,
-            strokeColor: pinColour,
-            center: window.marker.getPosition(),
-            radius: pinData.radius,
-            visible: false
-        });
-        google.maps.event.addListener(marker, "click", function () {
-            var bOrR = marker.icon.url.charAt(4)
-            if (bOrR == "b") {
-                drawLightbox("claimLightbox");
-            } 
-        });
-        markersArray.push(marker);
-        circlesArray.push(circle);
-        if (circleDrawn === false) {
-            circle1 = new google.maps.Circle({
-                map: window.map,
-                fillColor: "#8e44ad",
-                fillOpacity: 0.5,
-                strokeColor: "#8e44ad",
-                center: new google.maps.LatLng(57, -4),
-                radius: 140000
-            });
-            circlesArray.push(circle);
-            circle2 = new google.maps.Circle({
-                map: window.map,
-                fillColor: "#8e44ad",
-                fillOpacity: 0.5,
-                strokeColor: "#8e44ad",
-                center: new google.maps.LatLng(54.5, -2.2),
-                radius: 140000
-            });
-            circlesArray.push(circle);
-            circle3 = new google.maps.Circle({
-                map: window.map,
-                fillColor: "#8e44ad",
-                fillOpacity: 0.5,
-                strokeColor: "#8e44ad",
-                center: new google.maps.LatLng(52, 0),
-                radius: 140000
-            });
-            circlesArray.push(circle);
-            circle4 = new google.maps.Circle({
-                map: window.map,
-                fillColor: "#8e44ad",
-                fillOpacity: 0.5,
-                strokeColor: "#8e44ad",
-                center: new google.maps.LatLng(52.2, -4.3),
-                radius: 140000
-            });
-            circlesArray.push(circle);
-            circle5 = new google.maps.Circle({
-                map: window.map,
-                fillColor: "#8e44ad",
-                fillOpacity: 0.5,
-                strokeColor: "#8e44ad",
-                center: new google.maps.LatLng(54, -8),
-                radius: 140000
-            });
-            circlesArray.push(circle);
-            circleDrawn = true;
-        }
-        if (circle1.getBounds().contains(marker.getPosition())) {
-            circle1Num++
-        }
-        else if (circle2.getBounds().contains(marker.getPosition())) {
-            circle2Num++
-        }
-        else if (circle3.getBounds().contains(marker.getPosition())) {
-            circle3Num++
-        }
-        else if (circle4.getBounds().contains(marker.getPosition())) {
-            circle4Num++
-        }
-        else if (circle5.getBounds().contains(marker.getPosition())) {
-            circle5Num++
-        }
-    }
 }
 function listMarkers() {
-    circle1Num = 0;
-    circle2Num = 0;
-    circle3Num = 0;
-    circle4Num = 0;
-    circle5Num = 0;
     $.ajax({
         dataType: "jsonp",
         mimeType: "application/javascript",
@@ -178,23 +77,7 @@ function listMarkers() {
             for (var i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);
             }
-            var circle1Content = "<div height='auto' width='auto'>" + circle1Num + " markers" + "</div>";
-            var circle2Content = "<div height='auto' width='auto'>" + circle2Num + " markers" + "</div>";
-            var circle3Content = "<div height='auto' width='auto'>" + circle3Num + " markers" + "</div>";
-            var circle4Content = "<div height='auto' width='auto'>" + circle4Num + " markers" + "</div>";
-            var circle5Content = "<div height='auto' width='auto'>" + circle5Num + " markers" + "</div>";
-            if (map.getZoom() <= 8) {
-                infoWindow1.setContent(circle1Content);
-                infoWindow2.setContent(circle2Content);
-                infoWindow3.setContent(circle3Content);
-                infoWindow4.setContent(circle4Content);
-                infoWindow5.setContent(circle5Content);
-                infoWindow1.open(map);
-                infoWindow2.open(map);
-                infoWindow3.open(map);
-                infoWindow4.open(map);
-                infoWindow5.open(map);
-            }
+            var mc = new MarkerClusterer(map, markersArray, mcOptions);
         }
     });
 }
@@ -222,26 +105,11 @@ function clearMarkers() {
         }
         circlesArray.length = 0;
     }
-    circle1.setMap(null);
-    circle2.setMap(null);
-    circle3.setMap(null);
-    circle4.setMap(null);
-    circle5.setMap(null);
-    circleDrawn = false;
-    infoWindow1.close();
-    infoWindow2.close();
-    infoWindow3.close();
-    infoWindow4.close();
-    infoWindow5.close();
+    mc.clearMarkers();
 };
 
 function updateMarkers() {
-    circle1Num = 0;
-    circle2Num = 0;
-    circle3Num = 0;
-    circle4Num = 0;
-    circle5Num = 0;
-    clearMarkers();
+    mc.clearMarkers();
     //Add markers only from selected category
     $.ajax({
         dataType: "jsonp",
@@ -286,46 +154,10 @@ function updateMarkers() {
                     }
                 }
             }
-            circle1Content = "<div height='auto' width='auto'>" + circle1Num + " markers" + "</div>";
-            circle2Content = "<div height='auto' width='auto'>" + circle2Num + " markers" + "</div>";
-            circle3Content = "<div height='auto' width='auto'>" + circle3Num + " markers" + "</div>";
-            circle4Content = "<div height='auto' width='auto'>" + circle4Num + " markers" + "</div>";
-            circle5Content = "<div height='auto' width='auto'>" + circle5Num + " markers" + "</div>";
-            if (map.getZoom() <= 8) {
-                infoWindow1.setContent(circle1Content);
-                infoWindow2.setContent(circle2Content);
-                infoWindow3.setContent(circle3Content);
-                infoWindow4.setContent(circle4Content);
-                infoWindow5.setContent(circle5Content);
-                infoWindow1.open(map);
-                infoWindow2.open(map);
-                infoWindow3.open(map);
-                infoWindow4.open(map);
-                infoWindow5.open(map);
-            }
+            var mc = new MarkerClusterer(map, markersArray, mcOptions);
         }
     });
 }
-infoWindow1 = new google.maps.InfoWindow({
-    position: new google.maps.LatLng(57, -4),
-    disableAutoPan: true
-});
-infoWindow2 = new google.maps.InfoWindow({
-    position: new google.maps.LatLng(54.5, -2.2),
-    disableAutoPan: true
-});
-infoWindow3 = new google.maps.InfoWindow({
-    position: new google.maps.LatLng(52, 0),
-    disableAutoPan: true
-});
-infoWindow4 = new google.maps.InfoWindow({
-    position: new google.maps.LatLng(52.2, -4.3),
-    disableAutoPan: true
-});
-infoWindow5 = new google.maps.InfoWindow({
-    position: new google.maps.LatLng(54, -8),
-    disableAutoPan: true
-});
 function initialise() {
     var mapOptions = {
         center: new google.maps.LatLng(54, -2),
@@ -334,9 +166,6 @@ function initialise() {
     };
     window.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     listMarkers();
-    google.maps.event.addListener(window.map, 'zoom_changed', function() {
-        updateMarkers();
-    });
 }
 google.maps.event.addDomListener(window, "load", initialise);
 $(window).click(function() {
