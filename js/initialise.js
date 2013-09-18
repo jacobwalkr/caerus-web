@@ -77,12 +77,12 @@ function listMarkers() {
             for (var i = 0; i < pinDataCount; i++) {
                 addPinFromDatabase(data[i]);
             }
-            var mc = new MarkerClusterer(map, markersArray, mcOptions);
+            window.mc = new MarkerClusterer(map, markersArray, mcOptions);
         }
     });
 }
 
-function clearMarkers() {
+function clearMarkersArray() {
     if (markersArray) {
         for (i in markersArray) {
         markersArray[i].setMap(null);
@@ -105,11 +105,11 @@ function clearMarkers() {
         }
         circlesArray.length = 0;
     }
-    mc.clearMarkers();
+    window.mc.clearMarkers();
 };
 
-function updateMarkers() {
-    mc.clearMarkers();
+function updateMarkersArray() {
+    clearMarkersArray();
     //Add markers only from selected category
     $.ajax({
         dataType: "jsonp",
@@ -154,7 +154,7 @@ function updateMarkers() {
                     }
                 }
             }
-            var mc = new MarkerClusterer(map, markersArray, mcOptions);
+            window.mc = new MarkerClusterer(map, markersArray, mcOptions);
         }
     });
 }
@@ -169,5 +169,5 @@ function initialise() {
 }
 google.maps.event.addDomListener(window, "load", initialise);
 $(window).click(function() {
-    updateMarkers();
+    updateMarkersArray();
 });
