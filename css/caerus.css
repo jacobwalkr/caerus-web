@@ -589,11 +589,6 @@ table {
     font-family: Arial;
 }
 
-.filterAlert h3 {
-    padding-bottom: 0px;
-	margin-top: 20px;
-}
-
 .closeFilterAlert {
     position: relative;
     top: -53px;
