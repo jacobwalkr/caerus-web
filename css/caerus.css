@@ -244,6 +244,8 @@ body {
     box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #markerLightbox {
@@ -587,13 +589,14 @@ table {
     font-family: Arial;
 }
 
-.filterAlert {
+.filterAlert h3 {
     padding-bottom: 0px;
+	margin-top: 20px;
 }
 
 .closeFilterAlert {
     position: relative;
-    top: -87px;
+    top: -53px;
     left: 29px;
 }
 
@@ -649,7 +652,7 @@ table {
 .closeAboutLightbox {
     position: relative;
     right:-30px;
-    top:-101px;
+    top:-70px;
 }
 
 .about {

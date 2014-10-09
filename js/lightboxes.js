@@ -1,3 +1,5 @@
+//get width of the viewport
+var viewportWidth = $(window).width();
 //html to be added to lightboxes
 var lostLightboxHTML = '<h1 class="lostHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="lostRule"><form name="markerForm"><table><tr><td><label class="lostLabel">What have you lost?</label></td><td><input type="text" id="title" class="markerLostForm" name="title" placeholder="Item"></td></tr><tr><td><label class="lostLabel"> Describe your item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerLostForm" placeholder="Description"></textarea></td></tr><tr><td><label class="lostLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerLostForm"></td></tr><tr><td><label class="lostLabel">Not sure where you lost it? Set a radius in meters:</label></td><td><input type="text" class="markerLostForm" id="circleRadiusInput" name="radius" placeholder="0"></td></tr><tr><td><label class="lostLabel" id="instructionsLost">You can drag the pin around the map. Press enter to submit when you have finished.</label></td><td><input type="button" id="submitLostMarker" onclick="addPin(\'#e74c3c\')" value="Add marker"></td></tr></table></form>';
 var foundLightboxHTML = '<h1 class="foundHeader">Edit pin information</h1><input type="button" class="closeMarkerLightbox" onclick="removeLightbox(\'markerLightbox\')" value="X"><hr class="foundRule"><form name="markerForm"><table><tr><td><label class="foundLabel">What have you found?</label></td><td><input type="text" id= "title" class="markerFoundForm" name="title" placeholder="Item"></td></tr><tr><td><label class="foundLabel"> Describe the item:</label></td><td><textarea rows="2" cols="22" id="description" class="markerFoundForm" placeholder="Description"></textarea></td></tr><tr><td><label class="foundLabel">Enter an address or postcode for the pin (optional):</label></td><td><input type="text" placeholder="Address" id="address" class="markerFoundForm"></td></tr><tr><td><label class="foundLabel">Not sure where you found it? Set a radius in meters:</label></td><td><input type="text" class="markerFoundForm" id="circleRadiusInput" name="radius" placeholder="0"></td></tr><tr><td><label class="foundLabel" id="instructionsFound">You can drag the pin around the map. Press enter to submit when you have finished.</label></td><td><input type="button" id="submitFoundMarker" onclick="addPin(\'#2980b9\')" value="Add marker"></td></tr></table></form>';
@@ -33,7 +35,10 @@ function submitLightbox() {
     removeLightbox("submitLightbox");
 }
 function drawLightbox(lightboxID) {
+//removes any lightboxes already open
     removeLightbox("loginLightbox");
+    removeLightbox("aboutLightbox");
+    removeLightbox("videoLightbox");
     removeLightbox("markerLightbox");
     removeLightbox("databaseAlert");
     removeLightbox("filterAlert");
@@ -51,11 +56,11 @@ function drawLightbox(lightboxID) {
     }
     else if (lightboxID == "databaseAlert") {
         $(databaseAlertHTML).appendTo("#databaseAlert");
-        $(databaseAlert).css("left", "400px");
+		$(databaseAlert).css("left", (viewportWidth / 2) - ($(filterAlert).width() / 2));
     }
     else if (lightboxID == "filterAlert") {
         $(filterAlertHTML).appendTo("#filterAlert");
-        $(filterAlert).css("left", "400px");
+		$(filterAlert).css("left", (viewportWidth / 2) - ($(filterAlert).width() / 2));
     }
 }
 function addMarkerLightboxContent(pinHex) {
