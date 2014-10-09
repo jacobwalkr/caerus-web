@@ -260,7 +260,12 @@ body {
     box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
     -webkit-box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+<<<<<<< HEAD
     top: 100px;
+=======
+    margin-left: auto;
+    margin-right: auto;
+>>>>>>> responsive
 }
 
 #markerLightbox {
@@ -604,6 +609,7 @@ table {
     font-family: Arial;
 }
 
+<<<<<<< HEAD
 .filterAlert {
     padding-bottom: 0px;
     margin-top: 10px;
@@ -612,6 +618,11 @@ table {
 .closeFilterAlert {
     position: relative;
     top: -62px;
+=======
+.closeFilterAlert {
+    position: relative;
+    top: -53px;
+>>>>>>> responsive
     left: 29px;
 }
 
@@ -667,7 +678,11 @@ table {
 .closeAboutLightbox {
     position: relative;
     right:-30px;
+<<<<<<< HEAD
     top:-69px;
+=======
+    top:-70px;
+>>>>>>> responsive
 }
 
 .about {
@@ -808,6 +823,7 @@ table {
         height: 100px;
     }
 
+<<<<<<< HEAD
     .cd-dropdown {
         position: absolute;
         left: 50px;
@@ -832,6 +848,8 @@ table {
         left:50px;
     }
 
+=======
+>>>>>>> responsive
     #top-bar img {
         float: none;
     }
@@ -857,6 +875,24 @@ table {
 
     #main, #map-canvas {
         margin-top: 50px;
+<<<<<<< HEAD
+    }
+
+    .hi-icon-wrap {
+        margin: 0;
+        padding: 0;
+    }
+
+    #buttonsMobile:before,
+    #buttonsMobile:after {
+        content: " "; 
+        display: table;
+    }
+
+    #buttonsMobile:after {
+        clear: both;
+=======
+>>>>>>> responsive
     }
 
     .hi-icon-wrap {
@@ -873,4 +909,6 @@ table {
     #buttonsMobile:after {
         clear: both;
     }
+
+
 }
