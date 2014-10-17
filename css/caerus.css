@@ -86,10 +86,6 @@ html, body {
 	margin-left: -4px;
 }
 
-div {
-    display: inline;
-}
-
 #placeRedPinButton,#placeBluePinButton {
 	display: inline-block;
 	height: 50px;
@@ -873,8 +869,4 @@ table {
     #buttonsMobile:after {
         clear: both;
     }
-}
-
-#map-canvas img {
-	max-width: none;
 }
